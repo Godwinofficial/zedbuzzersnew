@@ -18,7 +18,6 @@ urlpatterns = [
   path('about_us/', about_us_list_view, name='about'),
   path('privacy_policy/', privacy_policy_list_view, name='privacy_policy'),
   path('terms_and_conditions/', terms_and_conditions_list_view, name='Ts&Cs'),
-
   path('search/', search_list_view, name='search'),
   
 ]
