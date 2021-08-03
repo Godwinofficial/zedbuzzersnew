@@ -1,0 +1,124 @@
+{% extends 'base.html'%} {% load static %} {% load humanize %} {% block title %} Download | {{ post_details.name }} - {{ post_details.title }} - Zedbuzzers{% endblock %} {% block content %}
+<div class="main">
+    <div class="content_wrapper">
+        <div class="content_wrapper4">
+            <div class="content_wrapper3">
+                <div class="content_wrapper2">
+                    <div class="content1">
+                        <p class="p1">Category: {{ post_details.category }}/{{ post_details.name }}/{{ post_details.title }}</p>
+                        <div class="top_title">
+                            <h1>{{ post_details.name }} - {{ post_details.title }}</h1>
+                        </div>
+                        <div class="name">
+                            <p>Posted by: {{ post_details.posted_by }} - {{ post_details.time_stamp|timesince }} ago.</p>
+                            <p class="views"><i id class="fas fa-eye"></i> {{ post_details.post_views|intcomma}}</p>
+                        </div>
+                        <div class="icons_wrapper">
+                            <ul>
+                                <li>
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri}}" id="fb"> <i class="fab fa-facebook-square"></i> </a>
+                                </li>
+                                <li>
+                                    <a style="color:#1da1f2;" href="https://twitter.com/home?status=I'm%20going%20to%20learn%20to%20Code...%20Come%20build%20an%20web%20apsp%20with%20me!%20%23CFE%20and%20@justinmitchel%20{{ request.build_absolute_uri}}"><i class="fab fa-twitter-square"></i> </a>
+                                </li>
+                                <li>
+                                    <a href="https://plus.google.com/share?url={{ request.build_absolute_uri}}" id="google"> <i class="fab fa-google-plus-square"></i> </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ request.build_absolute_uri}}/&title=Be%20first%20%7C%20Join%20Swift%20for%20Entrepreneurs&summary=Swift%20for%20Entrepreneurs%20is%20a%20project-based%20programming%20course%20for%20non-technical%20founders.%20We'll%20learn%20how%20to%20build%20iOS%20apps%20from%20scratch%20using%20Apple's%20new%20programming%20language:%20Swift.%20Be%20first%20and%20learn%20with%20me!&source={{ request.build_absolute_uri}}"
+                                        id="linkedin"> <i class="fab fa-linkedin"></i> </a>
+                                </li>
+
+                                <li>
+                                    <a href="http://pinterest.com/pinthis?url={{ request.build_absolute_uri}}" id="pinterest"> <i class="fab fa-pinterest-square"></i> </a>
+                                </li>
+                                <li>
+                                    <a href="http://www.reddit.com/submit?url={{ request.build_absolute_uri}}" id="reddit"> <i class="fab fa-reddit-square"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="artwork">
+                            <img src="{{ post_details.image.url }} " alt=" ">
+                        </div>
+                        <div class="description">
+                            <p>{{ post_details.description|linebreaks }}</p>
+                        </div>
+                        <div class="download_button_">
+                            <audio controls>
+                                <source src="{{ post_details.file.url }}" type="audio/mpeg">
+                                Your browser does not support the audio tag.
+                              </audio>
+                            <a href="{{post_details.file.url}}" download="{{post_details.file.url}}"><button class="download_button">Download {{ post_details.name }} - {{ post_details.title }}</button></a>
+                        </div>
+                    </div>
+                    <div class="related_posts_wrapper">
+                        <h3>Related posts</h3>
+                        <div class="Related_posts">
+                            {% for post in related_posts|slice:'10' %}
+                            <div class="first_block">
+                                <a href="{{ post.get_absolute_url }}"><img src="{{ post.image.url }}" alt=""></a>
+                                <h1><a href="{{ post.get_absolute_url }}">{{ post.name }} - {{ post.title }}</a></h1>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="related_posts_videos_wrapper">
+                    <h3>Videos you may like</h3>
+                    <div class="related_posts_videos">
+                        {% for post in related_posts_videos|slice:'6' %}
+                        <div class="first_block1">
+                            <a href="{{ post.get_absolute_url }}"><img src="{{ post.image.url }}" alt=""></a>
+                            <h1><a href="{{ post.get_absolute_url }}">{{ post.name }} - {{ post.title }}</a></h1>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="related_posts_videos_wrapper">
+                <h3>buzzing news</h3>
+                <div class="related_posts_videos">
+                    {% for post in news|slice:'4' %}
+                    <div class="first_block1">
+                        <a href="{{ post.get_absolute_url }}"><img src="{{ post.image.url }}" alt=""></a>
+                        <h1><a href="{{ post.get_absolute_url }}">{{ post.name }} - {{ post.title }}</a></h1>
+                        <p>{{ post.description|truncatewords:'8' }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+
+        <div class="content2">
+            <div class="content__">
+                <form action="{% url 'search' %}" method="get">
+                    <div class="search2_wr"></div>
+                    <div class="search2">
+                        <input type="text" name="search" placeholder="Search..." required>
+                        <a href=""><button> <i class="fas fa-search"></i> </button> </a>
+                    </div>
+                </form>
+            </div>
+            <div id="block2" class="block2 ">
+                <h2>Trending</h2>
+                <div class="block2_container ">
+                    {% for post in details_trending_posts|slice:'10' %}
+                    <div class="block2_content ">
+                        <a href="{{ post.get_absolute_url }}"><img src="{{ post.image.url }} " alt=" "></a>
+                    </div>
+                    <div class="text2 ">
+                        <h1 class="name"><a href="{{ post.get_absolute_url }}">{{ post.name }} - {{ post.title }}</a></h1>
+                        <p><i class="fas fa-tags "></i>{{post.category}}</p>
+                        <p>{{post.description|truncatewords:8}}</p>
+                        <small>Posted by: {{post.posted_by}}, {{ post.time_stamp }}.</small>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

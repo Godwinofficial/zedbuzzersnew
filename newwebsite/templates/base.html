@@ -1,0 +1,124 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css'%}">
+    <!-- <meta name="theme-color" content="steelblue"> -->
+    <script src="https://kit.fontawesome.com/5b5b3ef35d.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" type="image/jpg" href="{% static 'logo.jpg' %}">
+    <title>{% block title %}{% endblock %}</title>
+
+</head>
+
+<body>
+    <div class="app">
+        <div class="container">
+            <div class="mobile_nav">
+                <div class="mobile_nav_content">
+                    <div class="mobile_nav_top">
+                        <div class="nav_btns">
+                            <a href="#"><i id="bars" class="fas fa-bars"></i></a>
+                            <a href="#"><i id="times" class="fas fa-bars"></i></a>
+                        </div>
+                        <form action="{% url 'search' %}" method="GET">
+                            <div class="search_box_mobile_container">
+                                <input class="search_box_mobile " type="text " name='search' placeholder="Search... " required>
+                                <button style="background: none; border:none;" type="submit"><i type="submit" id="search_btn_mobile" class="fas fa-search "></i></button>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="slide" class="mobile_nav_links ">
+                        <nav>
+                            <ul>
+                                <li><a href="{% url 'home' %} ">Home</a></li>
+                                {% for item in category_links %}
+                                <li class="{% if url_name == 'category_links'%} active {% endif %}"><a href="{% url 'category' item|slugify %} ">{{ item }}</a></li>
+                                {% endfor %}
+                                <li><a href="{% url 'about' %}">About us</a></li>
+                            </ul>
+                            <img class="logo_n" src="{%static 'logo.jpg'%}" alt="">
+                        </nav>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="navbar">
+
+                {% include 'logo.html' %}
+                <div class="links ">
+                    <nav>
+                        <ul>
+                            <li><a href="{% url 'home' %} ">Home</a></li>
+                            {% for item in category_links %}
+                            <li class="{% if url_name == 'category_links'%} active {% endif %}"><a href="{% url 'category' item|slugify %} ">{{ item }}</a></li>
+                            {% endfor %}
+                            <li><a href="{% url 'about' %}">About us</a></li>
+
+                        </ul>
+                    </nav>
+                </div>
+                <form action="{% url 'search' %}" method="GET">
+                    <div class="search_container ">
+                        <input class="search_box " type="text " name='search' placeholder="Search... " required>
+                        <button style="background: none; border:none;" type="submit"><i type="submit" id="search_btn" class="fas fa-search "></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        {% block content %} replace {% endblock %}
+        <div class="footer ">
+            <div class="footer_img">
+                <img src="{% static 'logo.jpg' %}" alt="">
+            </div>
+
+            <div class="icons_wrapper">
+                <ul>
+                    <ul>
+                        <li>
+                            <a href="https://www.facebook.com/zedbuzzers" id="fb" target="_blank"> <i class="fab fa-facebook-square"></i> </a>
+                        </li>
+                        <li>
+                            <a style="color:#1da1f2;" href="https://www.facebook.com/zedbuzzers" target="_blank"><i class="fab fa-twitter-square"></i> </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/zedbuzzers" id="google" target="_blank"> <i class="fab fa-google-plus-square"></i> </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/zedbuzzers" id="linkedin" target="_blank"> <i class="fab fa-linkedin"></i> </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.facebook.com/zedbuzzers" id="pinterest" target="_blank"> <i class="fab fa-pinterest-square"></i> </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/zedbuzzers" id="reddit" target="_blank"> <i class="fab fa-reddit-square"></i></a>
+                        </li>
+                    </ul>
+                </ul>
+            </div>
+            <div class="bottom_content ">
+                <p> Copyright 2021 © Zedbuzzers | All Rights Reserved</p>
+            </div>
+            <small><a href="https://www.facebook.com/Godwinbanda4/" target="_blank"> <i class="fas fa-user-check"></i> Developed by Godwin</a></small>
+            <div class="footer_top_content ">
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    {% for item in category_links %}
+                    <li><a href="{% url 'category' item|slugify %} ">{{ item }}</a></li>
+                    {% endfor %}
+                    <li><a href="{% url 'about' %}">About us</a></li>
+                    <li><a href="{% url 'privacy_policy' %}">privacy policy</a></li>
+                    <li><a href="{% url 'Ts&Cs' %}">terms and conditions</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/main.js' %}">
+    </script>
+</body>
+
+</html>

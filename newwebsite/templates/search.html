@@ -1,0 +1,58 @@
+{% extends 'base.html'%} {% load static %} {{errors}} {% block content %} {% if search_data %}
+<div class="main">
+    <div class="se_">
+        <div class="main_container ">
+            <div class="main_content ">
+                <div class="block1 ">
+                    <h1 class="search_h1">Search results for: ' {{search}} '</h1>
+                    {% for search in search_data|slice:15 %}
+                    <div class="block1_container ">
+                        <div class="block1_content ">
+                            <a href="{{ search.get_absolute_url }}"><img src="{{ search.image.url }} " alt=" "></a>
+                        </div>
+                        <div class="text ">
+                            <h1 class="nama"><a href="{{search.get_absolute_url}}">{{ search.name }} - {{ search.title }}</a></h1>
+                            <p> <i class="fas fa-tags "></i> {{ search.category }}</p>
+                            <p>{{search.description|truncatewords:10}}</p>
+                            <small>Posted by: {{search.posted_by}}, {{ search.time_stamp|timesince }}.</p></small>
+                        </div>
+                    </div>
+                    {% endfor%}
+
+                </div>
+                {% else %}
+                <div class="noresult_cont">
+                    <img style="width: 65%; margin:2% 0 0 20%;" id="noresult" src="{% static 'no-result.png' %}" alt="">
+                </div>
+
+                <div class="noresult_cont2">
+                    <img style="width: 100%; margin:2% 0 38% 1%;" id="noresult" src="{% static 'no-result.png' %}" alt="">
+
+                </div>
+                {% endif %}
+                <!-- <div class="trending_search_posts">
+                            <h2>trending</h2>
+                            <div class="block2_container">
+                                {% for post in search_trending_pots|slice:'10' %}
+                                <div class="block2_content_2 ">
+                                    <a href="{{ post.get_absolute_url }}"><img src="{{ post.image.url}} " alt=" "></a>
+                                </div>
+                                <div class="text2 ">
+                                    <h1 class="name "><a href="{{post.get_absolute_url}}">{{ post.name }} - {{ post.title }}</a></h1>
+                                    <p> <i class="fas fa-tags "></i> {{post.category}}</p>
+                                    <p>{{post.description|truncatewords:10}}</p>
+                                    <small>Posted by: {{ post.posted_by }}, {{ post.time_stamp|timesince }}.</p></small>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        
+                        </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

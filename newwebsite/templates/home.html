@@ -1,0 +1,80 @@
+{% extends 'base.html'%} {% load static %} {% block title %}Zedbuzzers - Zambian And Foreign Music Download{% endblock %}{% block content %}
+<!-- Top Content -->
+<div class="main">
+    <div class="main_content_container">
+        <div class="content">
+            <div class="top_content">
+                {% for post in posts|slice:'3' %}
+                <div class="card">
+                    <a href="{{ post.get_absolute_url }}"><img src="{{post.image.url}} " alt=" "></a>
+                    <div class="img_text_container ">
+                        <h1 class="h1"><a href="{{ post.get_absolute_url }}">{{ post.name }} - {{ post.title }}</a></h1>
+                        <p class="date">{{ post.time_stamp|timesince }} ago.</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Main Content -->
+    <div class="main_container ">
+        <div class="main_content ">
+            <div class="block1 ">
+                <h2>Latest Music/Videos/News</h2>
+                {% for post in posts|slice:'15' %}
+                <div class="block1_container ">
+                    <div class="block1_content ">
+                        <a href="{{ post.get_absolute_url }}"><img src="{{post.image.url}} " alt=" "></a>
+                    </div>
+                    <div class="text ">
+                        <h1 class="name"><a href="{{ post.get_absolute_url }}">{{ post.name }} - {{ post.title }}</a></h1>
+                        <p> <i class="fas fa-tags "></i> {{post.category}}</p>
+                        <p>{{post.description|truncatewords:10}}</p>
+                        <small>Posted by: {{post.posted_by}}, {{ post.time_stamp|timesince }} ago.</p></small>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+
+
+            <div class="block2_wrapper">
+                <div class="content__">
+                    <form action="{% url 'search' %}" method="GET">
+                        <div class="search2_wr"></div>
+                        <div class="search2">
+                            <input type="text" name="search" placeholder="Search..." required>
+                            <button type="submit"> <i class="fas fa-search"></i></button>
+                        </div>
+                    </form>
+                </div>
+                <div class="block2 ">
+                    <h2>Trending</h2>
+                    {% for post in trending_posts|slice:'10' %}
+                    <div class="block2_container">
+                        <div class="block2_content ">
+                            <a href="{{ post.get_absolute_url }}"><img src="{{post.image.url}} " alt=" "></a>
+                        </div>
+                        <div class="text2 ">
+                            <h1 class="name "><a href="{{ post.get_absolute_url }}">{{ post.name }} - {{ post.title }}</a></h1>
+                            <p> <i class="fas fa-tags "></i> {{post.category}}</p>
+                            <p>{{post.description|truncatewords:10}}</p>
+                            <small>Posted by: {{post.posted_by}}, {{ post.time_stamp|timesince }} ago.</p></small>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="paginator_container">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% include 'pagination.html' %} {% endblock %}

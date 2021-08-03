@@ -1,0 +1,54 @@
+{% extends 'base.html'%} {% load static %} {% block title %} {{ categories|capfirst }} | Download Most Recent {{ categories|capfirst }} - Zedbuzzers {% endblock %} {% block content %}
+<!-- Main Content -->
+<div class="main">
+    <div class="main_container ">
+        <div class="main_content ">
+            <div class="block1 ">
+                <h2>Latest {{ categories }}</h2>
+                {% for post in category_posts|slice:'20' %}
+                <div class="block1_container ">
+                    <div class="block1_content ">
+                        <a href="{{ post.get_absolute_url }}"><img src="{{post.image.url}} " alt=" "></a>
+                    </div>
+                    <div class="text ">
+                        <h1 class="name"><a href="{{ post.get_absolute_url }}">{{ post.name }} - {{ post.title }}</a></h1>
+                        <p> <i class="fas fa-tags "></i> {{post.category}}</p>
+                        <p>{{ post.description|truncatewords:10 }}</p>
+                        <small>Posted by: {{post.posted_by}}, {{ post.time_stamp|timesince }} ago.</p></small>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="block2_wrapper">
+                <div class="content__">
+                    <form action="{% url 'search' %}" method="get">
+                        <div class="search2_wr"></div>
+                        <div class="search2">
+                            <input type="text" name="search" placeholder="Search..." required>
+                            <a href=""><button> <i class="fas fa-search"></i> </button> </a>
+                        </div>
+                    </form>
+                </div>
+                <div class="block2 ">
+                    <h2>Trending {{ categories }}</h2>
+                    {% for post in category_trending_posts|slice:'10' %}
+                    <div class="block2_container">
+                        <div class="block2_content ">
+                            <a href="{{ post.get_absolute_url }}"><img src="{{post.image.url}} " alt=" "></a>
+                        </div>
+                        <div class="text2 ">
+                            <h1 class="name "><a href="{{ post.get_absolute_url }}">{{ post.name }} - {{ post.title }}</a></h1>
+                            <p><i class="fas fa-tags "></i> {{post.category}}</p>
+                            <p>{{ post.description|truncatewords:10 }}</p>
+                            <small>Posted by: {{ post.posted_by }}, {{ post.time_stamp|timesince }} ago.</p></small>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'pagination.html' %} {% endblock %}
