@@ -15,6 +15,7 @@ import django_heroku
 from pathlib import Path
 from decouple import config
 import dj_database_url
+from django.core.wsgi import get_wsgi_application
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -30,7 +31,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['zedbuzzers.herokuapp.com', '127.0.0.1']
 
 
 
@@ -46,13 +47,13 @@ INSTALLED_APPS = [
     #own
     'newwebsite',
     'django.contrib.humanize',
-    'whitenoise.runserver_nostatic'
+    'whitenoise.runserver_nostatic',
 
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleWare',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -144,12 +145,8 @@ MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_cdn', 'media_root')
 
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_cdn', 'static_root')
 
-
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
-
 
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
-
-# Activate Django-Heroku.
 django_heroku.settings(locals())
