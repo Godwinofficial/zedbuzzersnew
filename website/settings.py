@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 import django_heroku
-# from pathlib import Path
+from pathlib import Path
 # from decouple import config
 import dj_database_url
 from django.core.wsgi import get_wsgi_application
@@ -30,9 +30,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'django-insecure-b(fpsx=ea^-+#^6gk=cz*p^co0-q@o^(fjs*hzhm-%sbm$ygrb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 
