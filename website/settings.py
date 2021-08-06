@@ -18,7 +18,7 @@ import django_heroku
 from django.core.wsgi import get_wsgi_application
 
 
-from cloudinary import cloudinary
+import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 
