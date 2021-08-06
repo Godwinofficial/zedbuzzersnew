@@ -15,7 +15,7 @@ import django_heroku
 # from pathlib import Path
 # from decouple import config
 # import dj_database_url
-from django.core.wsgi import get_wsgi_application
+# from django.core.wsgi import get_wsgi_application
 
 
 import cloudinary
@@ -38,7 +38,7 @@ SECRET_KEY = 'django-insecure-b(fpsx=ea^-+#^6gk=cz*p^co0-q@o^(fjs*hzhm-%sbm$ygrb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['zedbuzzers.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = []
 
 
 
