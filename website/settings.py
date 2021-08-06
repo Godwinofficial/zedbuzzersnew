@@ -15,7 +15,7 @@ import django_heroku
 # from pathlib import Path
 # from decouple import config
 # import dj_database_url
-# from django.core.wsgi import get_wsgi_application
+from django.core.wsgi import get_wsgi_application
 
 
 import cloudinary
@@ -149,11 +149,11 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_cdn', 'media_root')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static_cdn', 'media_root')
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_cdn', 'static_root')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn', 'static_root')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
