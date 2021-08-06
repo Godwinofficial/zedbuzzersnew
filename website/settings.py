@@ -38,7 +38,21 @@ SECRET_KEY = 'django-insecure-b(fpsx=ea^-+#^6gk=cz*p^co0-q@o^(fjs*hzhm-%sbm$ygrb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['zedbuzzers.herokuapp.com', '127.0.0.1']
+
+
+SECURE_BROWSER_XSS_FILTER = True
+X_FRAME_OPTIONS = 'DENY'
+SECURE_SSL_REDIRECT = True
+SECURE_HSTS_SECONDS = 3600 
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True 
+SECURE_HSTS_PRELOAD = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_FRAME_DENY = True
+SESSION_COOKIE_HTTPONLY = True
+
 
 
 
