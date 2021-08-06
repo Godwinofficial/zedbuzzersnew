@@ -1,17 +1,19 @@
 const slide = document.getElementById('slide')
 const bars = document.getElementById('bars')
-const barsClose = document.getElementById('times')
+const times = document.getElementById('times')
 
 bars.addEventListener('click', () => {
     slide.style.marginTop = '0';
     bars.style.display = 'none';
-    barsClose.style.display = 'block'
+    times.style.display = 'block'
+    times.style.transition = '10s'
 })
 
 
-barsClose.addEventListener('click', () => {
+times.addEventListener('click', () => {
     slide.style.marginTop = '-300%'
     bars.style.display = 'block'
-    barsClose.style.display = 'none'
+    times.style.display = 'none'
+
 
 })

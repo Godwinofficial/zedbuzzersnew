@@ -19,18 +19,26 @@
             <div class="mobile_nav">
                 <div class="mobile_nav_content">
                     <div class="mobile_nav_top">
+                        <div class="logo_mobile">
+                            <img src="{% static 'logo.jpg' %} " alt=" ">
+
+                        </div>
+                        <div class="logo_p">
+                            <p>Zedbuzzers</p>
+                        </div>
                         <div class="nav_btns">
                             <a href="#"><i id="bars" class="fas fa-bars"></i></a>
-                            <a href="#"><i id="times" class="fas fa-bars"></i></a>
+                            <a href="#"><i id="times" class="fas fa-times"></i></a>
                         </div>
+
+                    </div>
+                    <div id="slide" class="mobile_nav_links ">
                         <form action="{% url 'search' %}" method="GET">
                             <div class="search_box_mobile_container">
                                 <input class="search_box_mobile " type="text " name='search' placeholder="Search... " required>
                                 <button style="background: none; border:none;" type="submit"><i type="submit" id="search_btn_mobile" class="fas fa-search "></i></button>
                             </div>
                         </form>
-                    </div>
-                    <div id="slide" class="mobile_nav_links ">
                         <nav>
                             <ul>
                                 <li><a href="{% url 'home' %} ">Home</a></li>
@@ -39,7 +47,6 @@
                                 {% endfor %}
                                 <li><a href="{% url 'about' %}">About us</a></li>
                             </ul>
-                            <img class="logo_n" src="{%static 'logo.jpg'%}" alt="">
                         </nav>
 
                     </div>

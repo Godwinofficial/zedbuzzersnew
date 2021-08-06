@@ -15,7 +15,12 @@ import django_heroku
 # from pathlib import Path
 # from decouple import config
 # import dj_database_url
-from django.core.wsgi import get_wsgi_application
+# from django.core.wsgi import get_wsgi_application
+
+
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -30,23 +35,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'django-insecure-b(fpsx=ea^-+#^6gk=cz*p^co0-q@o^(fjs*hzhm-%sbm$ygrb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['zedbuzzers.herokuapp.com', '127.0.0.1']
 
 
-
-SECURE_BROWSER_XSS_FILTER = True
-X_FRAME_OPTIONS = 'DENY'
-SECURE_SSL_REDIRECT = True
-SECURE_HSTS_SECONDS = 3600
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_HSTS_PRELOAD = True
-SECURE_CONTENT_TYPE_NOSNIFF = True   
-SESSION_COOKIE_SECURE = True # new
-CSRF_COOKIE_SECURE = True # new
-SECURE_FRAME_DENY = True
-SESSION_COOKIE_HTTPONLY = True 
 
 # Application definition
 
@@ -61,6 +54,8 @@ INSTALLED_APPS = [
     'newwebsite',
     'django.contrib.humanize',
     'whitenoise.runserver_nostatic',
+    'cloudinary_storage',
+    'cloudinary',
 
 ]
 
@@ -154,14 +149,25 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static_cdn', 'media_root')
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_cdn', 'media_root')
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn', 'static_root')
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_cdn', 'static_root')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+
+
+
+
+cloudinary.config( 
+  cloud_name = "godwinb", 
+  api_key = "339515159917774", 
+  api_secret = "7hBeCAaSuj2Nm9KabqkH0Ku5Mds" 
+)
+
+
 
 django_heroku.settings(locals())
