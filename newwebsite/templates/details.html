@@ -48,16 +48,18 @@
                                 <source src="{{ post_details.file.url }}" type="audio/mpeg">
                                 Your browser does not support the audio tag.
                               </audio>
-                            <a href="{{post_details.file.url}}" download="{{post_details.file.url}}"><button class="download_button">Download {{ post_details.name }} - {{ post_details.title }}</button></a>
+                            <a href="{{post_details.file.url }}" download="{{post_details.file.url}}"><button class="download_button">Download {{ post_details.name }} - {{ post_details.title }}</button></a>
                         </div>
                     </div>
                     <div class="related_posts_wrapper">
                         <h3>Related posts</h3>
                         <div class="Related_posts">
-                            {% for post in related_posts|slice:'10' %}
-                            <div class="first_block">
-                                <a href="{{ post.get_absolute_url }}"><img src="{{ post.image.url }}" alt=""></a>
-                                <h1><a href="{{ post.get_absolute_url }}">{{ post.name }} - {{ post.title }}</a></h1>
+                            {% for post in related_posts|slice:'4' %}
+                            <div class="card_wrapper_3">
+                                <div class="first_block">
+                                    <a href="{{ post.get_absolute_url }}"><img src="{{ post.image.url }}" alt=""></a>
+                                    <h1><a href="{{ post.get_absolute_url }}">{{ post.name }} - {{ post.title }}</a></h1>
+                                </div>
                             </div>
                             {% endfor %}
                         </div>
@@ -66,10 +68,12 @@
                 <div class="related_posts_videos_wrapper">
                     <h3>Videos you may like</h3>
                     <div class="related_posts_videos">
-                        {% for post in related_posts_videos|slice:'6' %}
-                        <div class="first_block1">
-                            <a href="{{ post.get_absolute_url }}"><img src="{{ post.image.url }}" alt=""></a>
-                            <h1><a href="{{ post.get_absolute_url }}">{{ post.name }} - {{ post.title }}</a></h1>
+                        {% for post in related_posts_videos|slice:'4' %}
+                        <div class="card_wrapper_3">
+                            <div class="first_block1">
+                                <a href="{{ post.get_absolute_url }}"><img src="{{ post.image.url }}" alt=""></a>
+                                <h1><a href="{{ post.get_absolute_url }}">{{ post.name }} - {{ post.title }}</a></h1>
+                            </div>
                         </div>
                         {% endfor %}
                     </div>
@@ -80,10 +84,12 @@
                 <h3>buzzing news</h3>
                 <div class="related_posts_videos">
                     {% for post in news|slice:'4' %}
-                    <div class="first_block1">
-                        <a href="{{ post.get_absolute_url }}"><img src="{{ post.image.url }}" alt=""></a>
-                        <h1><a href="{{ post.get_absolute_url }}">{{ post.name }} - {{ post.title }}</a></h1>
-                        <p>{{ post.description|truncatewords:'8' }}</p>
+                    <div class="card_wrapper_3">
+                        <div class="first_block1">
+                            <a href="{{ post.get_absolute_url }}"><img src="{{ post.image.url }}" alt=""></a>
+                            <h1><a href="{{ post.get_absolute_url }}">{{ post.name }} - {{ post.title }}</a></h1>
+                            <p>{{ post.description|truncatewords:'8' }}</p>
+                        </div>
                     </div>
                     {% endfor %}
                 </div>
@@ -101,10 +107,20 @@
                     </div>
                 </form>
             </div>
+            <div class="details_ads_container">
+                <h2>advertisements</h2>
+                {% for ad in ads|slice:'2' %}
+                <div class="details_ads_block">
+                    <video playsinline autoplay muted loop>
+                        <source src="{{ ad.ad_file.url }}" type="video/mp4">
+                    </video>
+                </div>
+                {% endfor %}
+            </div>
             <div id="block2" class="block2 ">
                 <h2>Trending</h2>
                 <div class="block2_container ">
-                    {% for post in details_trending_posts|slice:'10' %}
+                    {% for post in details_trending_posts|slice:'5' %}
                     <div class="block2_content ">
                         <a href="{{ post.get_absolute_url }}"><img src="{{ post.image.url }} " alt=" "></a>
                     </div>
@@ -116,6 +132,14 @@
                     </div>
                     {% endfor %}
                 </div>
+            </div>
+            <div class="details_ads_container">
+                <h2>advertisements</h2>
+                {% for ad in ads|slice:'3' %}
+                <div class="details_ads_block">
+                    <img src="{{ ad.ad_file.url }}" alt="">
+                </div>
+                {% endfor %}
             </div>
         </div>
     </div>

@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Post, Category
+from .models import Post, Category, Ads
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 
 # Create your views here.
@@ -10,6 +10,8 @@ def home_list_view(request):
     trending_posts = Post.objects.all().order_by('-post_views')
     category_links = Category.objects.all()
     posts = Post.objects.all().order_by('-time_stamp')
+    ads = Ads.objects.all().order_by('-id')
+
 
     paginator = Paginator(posts, 15)
     page = request.GET.get('page')
@@ -32,7 +34,9 @@ def home_list_view(request):
       'posts': posts,
       'category_links': category_links,
       'trending_posts': trending_posts,
-      'page_range': page_range
+      'page_range': page_range,
+      'ads': ads,
+
     }
 
   return render(request, 'home.html', context)
@@ -51,6 +55,7 @@ def post_detail_view(request, slug):
     details_trending_posts = Post.objects.all().order_by('-post_views')
     post_details.post_views += 1
     post_details.save()
+    ads = Ads.objects.all().order_by('-id')
 
 
     context = {
@@ -59,7 +64,8 @@ def post_detail_view(request, slug):
       'category_links': category_links,
       'details_trending_posts':details_trending_posts,
       'related_posts': related_posts,
-      'related_posts_videos': related_posts_videos
+      'related_posts_videos': related_posts_videos,
+      'ads': ads,
     }
   return render(request, 'details.html', context)
 
@@ -72,7 +78,7 @@ def category_list_view(request, slug):
     category_posts = Post.objects.filter(category=categories)
     posts = category_posts
     category_trending_posts = Post.objects.filter(category=categories).order_by('-post_views')
-
+    ads = Ads.objects.all().order_by('-id')
 
     paginator = Paginator(posts, 15)
     page = request.GET.get('page')
@@ -100,8 +106,9 @@ def category_list_view(request, slug):
       'category_trending_posts': category_trending_posts,
       'posts': posts,
       'page_range': page_range,
-
+      'ads': ads,
     }
+
   return render(request, 'category.html', context)
 
 

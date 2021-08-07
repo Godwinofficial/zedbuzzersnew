@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.db import models
-from .models import Post, Category
+from .models import Post, Category, Ads
 
 # Register your models here.
 
@@ -18,4 +18,6 @@ class CategoryAdmin(admin.ModelAdmin):
 
 admin.site.register(Post, PostAdmin)
 admin.site.register(Category, CategoryAdmin)
+admin.site.register( Ads)
+
 

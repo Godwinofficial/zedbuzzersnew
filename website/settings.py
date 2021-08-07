@@ -12,8 +12,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 import django_heroku
-# from pathlib import Path
-# from decouple import config
+from pathlib import Path
+from decouple import config
 # import dj_database_url
 # from django.core.wsgi import get_wsgi_application
 
@@ -23,17 +23,17 @@ import cloudinary.uploader
 import cloudinary.api
 
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-# BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-b(fpsx=ea^-+#^6gk=cz*p^co0-q@o^(fjs*hzhm-%sbm$ygrb'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -71,7 +71,6 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'cloudinary_storage',
     'cloudinary',
-
 ]
 
 MIDDLEWARE = [
@@ -164,11 +163,11 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static_cdn', 'media_root')
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_cdn', 'media_root')
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn', 'static_root')
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_cdn', 'static_root')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
@@ -182,7 +181,6 @@ cloudinary.config(
   api_key = "339515159917774", 
   api_secret = "7hBeCAaSuj2Nm9KabqkH0Ku5Mds" 
 )
-
 
 
 django_heroku.settings(locals())

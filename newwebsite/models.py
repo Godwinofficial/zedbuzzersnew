@@ -29,10 +29,21 @@ class Post(models.Model):
 
   def __str__(self):
     return self.name
+  
+  def get_absolute_url(self, *args, **kwargs):
+    return reverse('post-details', kwargs={'slug': self.slug})
 
+
+
+
+class Ads(models.Model):
+  name        = models.CharField(max_length=500, null=True)
+  ad_file     = CloudinaryField('images', null=True, resource_type='raw')
+
+  def __str__(self):
+    return self.name
 
  
 
 
-  def get_absolute_url(self, *args, **kwargs):
-    return reverse('post-details', kwargs={'slug': self.slug})
+  

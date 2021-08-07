@@ -6,15 +6,18 @@
             <div class="block1 ">
                 <h2>Latest {{ categories }}</h2>
                 {% for post in category_posts|slice:'20' %}
+
                 <div class="block1_container ">
-                    <div class="block1_content ">
-                        <a href="{{ post.get_absolute_url }}"><img src="{{post.image.url}} " alt=" "></a>
-                    </div>
-                    <div class="text ">
-                        <h1 class="name"><a href="{{ post.get_absolute_url }}">{{ post.name }} - {{ post.title }}</a></h1>
-                        <p> <i class="fas fa-tags "></i> {{post.category}}</p>
-                        <p>{{ post.description|truncatewords:10 }}</p>
-                        <small>Posted by: {{post.posted_by}}, {{ post.time_stamp|timesince }} ago.</p></small>
+                    <div class="card_wrapper">
+                        <div class="block1_content ">
+                            <a href="{{ post.get_absolute_url }}"><img src="{{post.image.url}} " alt=" "></a>
+                        </div>
+                        <div class="text ">
+                            <h1 class="name"><a href="{{ post.get_absolute_url }}">{{ post.name }} - {{ post.title }}</a></h1>
+                            <p> <i class="fas fa-tags "></i> {{post.category}}</p>
+                            <p>{{ post.description|truncatewords:10 }}</p>
+                            <small>Posted by: {{post.posted_by}}, {{ post.time_stamp|timesince }} ago.</p></small>
+                        </div>
                     </div>
                 </div>
                 {% endfor %}
@@ -30,6 +33,16 @@
                         </div>
                     </form>
                 </div>
+                <div class="details_ads_container">
+                    <h2>advertisements</h2>
+                    {% for ad in ads|slice:'2' %}
+                    <div class="details_ads_block">
+                        <video playsinline autoplay muted loop>
+                            <source src="{{ ad.ad_file.url }}" type="video/mp4">
+                        </video>
+                    </div>
+                    {% endfor %}
+                </div>
                 <div class="block2 ">
                     <h2>Trending {{ categories }}</h2>
                     {% for post in category_trending_posts|slice:'10' %}
@@ -43,6 +56,14 @@
                             <p>{{ post.description|truncatewords:10 }}</p>
                             <small>Posted by: {{ post.posted_by }}, {{ post.time_stamp|timesince }} ago.</p></small>
                         </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="details_ads_container">
+                    <h2>advertisements</h2>
+                    {% for ad in ads|slice:'3' %}
+                    <div class="details_ads_block">
+                        <img src="{{ ad.ad_file.url }}" alt="">
                     </div>
                     {% endfor %}
                 </div>
