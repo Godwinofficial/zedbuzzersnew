@@ -13,9 +13,9 @@ body {
 
 .navbar {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 20% 50% 30%;
     background: #000;
-    border-bottom: 0.5px solid #444;
+    border-bottom: 0.1px solid #333;
 }
 
 .slider {
@@ -27,8 +27,8 @@ body {
 }
 
 .logo img {
-    width: 78px;
-    margin-left: 8%;
+    width: 65%;
+    margin: 3% 0 0 2%;
 }
 
 .links {
@@ -64,20 +64,15 @@ body {
     background: none;
     color: #fff;
     font-size: 15px;
-    border-left: 0.5px solid #444;
+    border-left: 0.5px solid #333;
     margin-left: 25%;
     outline: none;
-}
-
-.search_box:focus {
-    background: #000;
 }
 
 #search_btn {
     color: #555;
     padding: 6px 15px;
     border: none;
-    background: #000;
     cursor: pointer;
 }
 
@@ -938,19 +933,20 @@ audio {
         display: block;
     }
     .mobile_nav_top {
-        background: #000;
+        background: #fff;
         width: 100%;
         padding: 1% 0%;
         z-index: 888;
         position: fixed;
         margin-top: 0%;
-        border-bottom: 0.5px solid #222;
+        /* border-bottom: 0.5px solid #ccc; */
         display: grid;
         grid-template-columns: 30% 30% 30%;
+        box-shadow: 1px 1px 4px #999;
     }
     .mobile_nav_links {
         padding: 20% 1% 3% 1%;
-        background: #000;
+        background: #fff;
         display: block;
         position: fixed;
         width: 100%;
@@ -958,12 +954,14 @@ audio {
         /* transition: 0.5s ease; */
         z-index: 666;
         padding-bottom: 5%;
+        /* height: 100%; */
+        border-bottom: 1px solid #ddd;
     }
     .nav_btns {
         display: block;
-        margin-top: 10%;
+        margin-top: 9%;
         font-size: 30px;
-        margin-left: 96%;
+        margin-left: 203%;
     }
     .search_box_mobile {
         background: none;
@@ -994,11 +992,11 @@ audio {
     #times {
         display: none;
         position: absolute;
-        color: #fff;
+        color: #222;
     }
     #bars {
         position: absolute;
-        color: #fff;
+        color: #222;
         transition: 0.5s ease;
     }
     #bars:hover {
@@ -1009,9 +1007,9 @@ audio {
         padding-left: 3%;
     }
     .mobile_nav_links a {
-        color: #999;
-        font-size: 20px;
-        font-weight: 400;
+        color: #777;
+        font-size: 18px;
+        font-weight: 500;
         text-transform: uppercase;
     }
     .mobile_nav_links a:hover {
@@ -1441,10 +1439,12 @@ audio {
         font-size: 18px;
     }
     .logo_mobile img {
-        width: 65%;
+        width: 140%;
+        /* background: red; */
     }
     .logo_mobile {
         display: flex;
+        margin-left: 6%;
     }
     .logo_p p {
         color: #fff;

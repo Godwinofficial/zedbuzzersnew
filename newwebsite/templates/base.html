@@ -7,6 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/main.css'%}">
     <!-- <meta name="theme-color" content="steelblue"> -->
+
+    <meta property="og:title" content="{% block name %}{% endblock %}" />
+    <meta property="og:image" content="{% block image %}{% endblock %}" />
+    <meta property="og:url" content="{% block url %}{% endblock %}" />
+    <meta property="og:description" content="{% block description %} {% endblock %}" />
+
+
     <script src="https://kit.fontawesome.com/5b5b3ef35d.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" type="image/jpg" href="{% static 'logo.jpg' %}">
     <title>{% block title %}{% endblock %}</title>
@@ -20,17 +27,16 @@
                 <div class="mobile_nav_content">
                     <div class="mobile_nav_top">
                         <div class="logo_mobile">
-                            <img src="{% static 'logo.jpg' %} " alt=" ">
+                            <img src="{% static 'logo3.png' %} " alt=" ">
 
                         </div>
-                        <div class="logo_p">
+                        <!-- <div class="logo_p">
                             <p>Zedbuzzers</p>
-                        </div>
+                        </div> -->
                         <div class="nav_btns">
                             <a href="#"><i id="bars" class="fas fa-bars"></i></a>
                             <a href="#"><i id="times" class="fas fa-times"></i></a>
                         </div>
-
                     </div>
                     <div id="slide" class="mobile_nav_links ">
                         <form action="{% url 'search' %}" method="GET">
@@ -54,8 +60,9 @@
                 </div>
             </div>
             <div class="navbar">
-
-                {% include 'logo.html' %}
+                <div class="logs">
+                    {% include 'logo.html' %}
+                </div>
                 <div class="links ">
                     <nav>
                         <ul>
