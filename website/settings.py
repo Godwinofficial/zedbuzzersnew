@@ -11,9 +11,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import os
-# import django_heroku
+import django_heroku
 from pathlib import Path
-# from decouple import config
+from decouple import config
 # import dj_database_url
 # from django.core.wsgi import get_wsgi_application
 
@@ -33,7 +33,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-b(fpsx=ea^-+#^6gk=cz*p^co0-q@o^(fjs*hzhm-%sbm$ygrb'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -41,17 +41,17 @@ DEBUG = True
 ALLOWED_HOSTS = ['127.0.0.1']
 
 
-SECURE_BROWSER_XSS_FILTER = True
-X_FRAME_OPTIONS = 'DENY'
-SECURE_SSL_REDIRECT = True
-SECURE_HSTS_SECONDS = 3600 
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True 
-SECURE_HSTS_PRELOAD = True
-SECURE_CONTENT_TYPE_NOSNIFF = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SECURE_FRAME_DENY = True
-SESSION_COOKIE_HTTPONLY = True
+# SECURE_BROWSER_XSS_FILTER = True
+# X_FRAME_OPTIONS = 'DENY'
+# SECURE_SSL_REDIRECT = True
+# SECURE_HSTS_SECONDS = 3600 
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True 
+# SECURE_HSTS_PRELOAD = True
+# SECURE_CONTENT_TYPE_NOSNIFF = True
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
+# SECURE_FRAME_DENY = True
+# SESSION_COOKIE_HTTPONLY = True
 
 
 
@@ -68,13 +68,13 @@ INSTALLED_APPS = [
     #own
     'newwebsite',
     'django.contrib.humanize',
-    # 'whitenoise.runserver_nostatic',
+    'whitenoise.runserver_nostatic',
     # 'cloudinary_storage',
     # 'cloudinary',
 ]
 
 MIDDLEWARE = [
-    # 'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -169,9 +169,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_cdn', 'static_root')
 
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 
 
@@ -183,4 +183,4 @@ STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_cdn', 'static_root
 # )
 
 
-# django_heroku.settings(locals())
+django_heroku.settings(locals())
