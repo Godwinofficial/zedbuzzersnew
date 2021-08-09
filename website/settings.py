@@ -11,16 +11,16 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import os
-import django_heroku
+# import django_heroku
 from pathlib import Path
 from decouple import config
 # import dj_database_url
 # from django.core.wsgi import get_wsgi_application
 
 
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
+# import cloudinary
+# import cloudinary.uploader
+# import cloudinary.api
 
 
 # BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -38,7 +38,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['zedbuzzers.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = []
 
 
 SECURE_BROWSER_XSS_FILTER = True
@@ -68,13 +68,13 @@ INSTALLED_APPS = [
     #own
     'newwebsite',
     'django.contrib.humanize',
-    'whitenoise.runserver_nostatic',
-    'cloudinary_storage',
-    'cloudinary',
+    # 'whitenoise.runserver_nostatic',
+    # 'cloudinary_storage',
+    # 'cloudinary',
 ]
 
 MIDDLEWARE = [
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -176,11 +176,11 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 
 
-cloudinary.config( 
-  cloud_name = "godwinb", 
-  api_key = "339515159917774", 
-  api_secret = "7hBeCAaSuj2Nm9KabqkH0Ku5Mds" 
-)
+# cloudinary.config( 
+#   cloud_name = "godwinb", 
+#   api_key = "339515159917774", 
+#   api_secret = "7hBeCAaSuj2Nm9KabqkH0Ku5Mds" 
+# )
 
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
