@@ -1170,7 +1170,7 @@ audio {
     }
     .block2 img {
         width: 100%;
-        filter: brightness(40%);
+        filter: brightness(90%);
     }
     .block2_content {
         margin-top: 4%;
