@@ -1129,13 +1129,14 @@ audio {
         width: 100%;
     }
     .block1_content {
-        height: 105px;
-        width: 140px;
+        height: 108px;
+        width: 135px;
         overflow: hidden;
     }
     .block1_content img {
         height: auto;
-        width: 100%;
+        width: 110%;
+        object-fit: cover;
         background-size: cover;
     }
     /* .text {
