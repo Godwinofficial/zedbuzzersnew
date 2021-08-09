@@ -1112,14 +1112,14 @@ audio {
         padding-top: 9%;
         margin: 0 1.4%;
     }
-    /* .block1_container {
+    .block1_container {
         display: inline-block;
         grid-template-columns: 5% 70%;
         margin: 0%;
         border-bottom: none;
         display: inline-block;
         width: 100%;
-    } */
+    }
     .card_wrapper {
         box-shadow: 1px 1px 7px #999;
         display: flex;
