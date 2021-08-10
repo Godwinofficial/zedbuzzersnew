@@ -179,7 +179,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 cloudinary.config( 
   cloud_name = "godwinb", 
   api_key = "339515159917774", 
-  api_secret = "7hBeCAaSuj2Nm9KabqkH0Ku5Mds" 
+  api_secret = "7hBeCAaSuj2Nm9KabqkH0Ku5Mds",
+  secure = "true", 
 )
 
 
