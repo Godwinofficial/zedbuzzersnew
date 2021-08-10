@@ -43,7 +43,7 @@
                                 <button style="background: none; border:none;" type="submit"><i type="submit" id="search_btn_mobile" class="fas fa-search "></i></button>
                             </div>
                         </form>
-                        <nav>
+                        <nav class="mobile_navb">
                             <ul>
                                 <li><a href="{% url 'home' %} ">Home</a></li>
                                 {% for item in category_links %}
@@ -126,6 +126,10 @@
                 </ul>
             </div>
         </div>
+
+
+
+
     </div>
     <script src="{% static 'js/main.js' %}">
     </script>
