@@ -167,33 +167,29 @@ body {
 }
 
 .main_container {
-    margin: 5% 3%;
+    margin: 5% 4%;
 }
 
 .block1 {
     background: #fff;
-    padding: 5%;
+    padding: 0 5% 0 3%;
     box-shadow: 1px 0px 4px #bbb;
 }
 
-.block1_content {
-    height: 180px;
-    width: 280px;
-    overflow: hidden;
-}
-
 .card_wrapper {
-    display: flex;
-    float: left;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    /* float: left; */
     background: #fff;
     box-shadow: 1px 1px 7px #999;
     width: 100%;
+    margin-bottom: 3%;
 }
 
-.card_wrapper_2 {
-    display: block;
-    float: none;
+.block1_content {
+    height: 160px;
     width: 100%;
+    overflow: hidden;
 }
 
 .block1_content img {
@@ -207,13 +203,13 @@ body {
     color: #444;
     text-transform: uppercase;
     font-weight: 900;
-    margin: 0 3%;
+    margin: 6% 3% 0 3%;
     font-family: Arial, Helvetica, sans-serif;
     padding-bottom: 20px;
 }
 
 .block1_container {
-    display: flex;
+    /* display: flex; */
     /* grid-template-columns: auto auto; */
     margin: 2% 0.4% 0 3%;
     padding-bottom: 2%;
@@ -240,8 +236,8 @@ body {
 }
 
 .block1_container .text p {
-    padding-top: 8px;
-    font-size: 14px;
+    padding-top: 5px;
+    font-size: 13px;
     color: #555;
     font-weight: 500;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -249,17 +245,15 @@ body {
 
 .block1_container .text p i {
     color: #000;
-    font-size: 12px;
-    margin-top: 6px;
-    color: white;
-    background: rgb(14, 100, 170);
+    font-size: 9px;
+    margin-top: 4px;
+    color: #666;
 }
 
 .block1_container .text small {
     font-size: 12px;
     cursor: pointer;
     color: #999;
-    color: rgb(14, 100, 170);
     font-weight: 400;
 }
 
@@ -343,10 +337,10 @@ body {
 
 .block2_container .text2 p i {
     color: #000;
-    font-size: 12px;
-    margin-top: 6px;
-    background: rgb(14, 100, 170);
-    color: #fff;
+    font-size: 9px;
+    margin-top: 4px;
+    /* background: #999; */
+    color: #666;
 }
 
 .block2_container .text2 small {
@@ -354,7 +348,7 @@ body {
     cursor: pointer;
     color: #999;
     font-weight: 400;
-    color: rgb(14, 100, 170);
+    color: #999;
 }
 
 .footer {
@@ -471,7 +465,7 @@ body {
     font-weight: 300;
     font-size: 12px;
     color: #666;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
 }
 
 .artwork img {
@@ -1104,39 +1098,38 @@ audio {
     }
     .block1 {
         background: #fff;
-        padding: 0 1.5% 0 1%;
+        padding: 0 1.5%;
         box-shadow: 1px 0px 4px #bbb;
     }
     .block1 h2 {
         font-size: 25px;
-        padding-top: 9%;
+        padding-top: 8%;
         margin: 0 1.4%;
     }
     .block1_container {
         display: inline-block;
-        grid-template-columns: 5% 70%;
         margin: 0%;
         border-bottom: none;
         display: inline-block;
         width: 100%;
     }
     .card_wrapper {
-        box-shadow: 1px 1px 7px #999;
-        display: flex;
-        float: left;
+        display: grid;
+        grid-template-columns: 32% 63%;
+        /* float: left; */
         background: #fff;
         box-shadow: 1px 1px 7px #999;
         width: 100%;
+        margin-bottom: 3%;
     }
     .block1_content {
-        height: 108px;
-        width: 135px;
+        height: 114px;
+        width: 100%;
         overflow: hidden;
     }
     .block1_content img {
         height: auto;
-        width: 110%;
-        object-fit: cover;
+        width: 108%;
         background-size: cover;
     }
     /* .text {
@@ -1148,12 +1141,13 @@ audio {
         /* text-transform: uppercase; */
     }
     .block1_container .text p {
-        font-size: 11px;
+        padding-top: 5px;
+        font-size: 12px;
     }
     .block1_container .text small {
-        font-size: 10px;
+        font-size: 9px;
         cursor: pointer;
-        color: rgb(14, 100, 170);
+        color: #666;
         font-weight: 400;
     }
     .block2 {
@@ -1206,28 +1200,28 @@ audio {
         font-size: 12px;
     }
     .block2_container .text2 small {
-        font-size: 10px;
+        font-size: 9px;
         cursor: pointer;
-        color: rgb(14, 100, 170);
+        color: #666;
         font-weight: 400;
     }
     .block2_wrapper {
         margin-top: 10%;
     }
     .page_number {
-        background: rgb(34, 83, 122);
+        /* background: rgb(34, 83, 122); */
         color: #fff;
         padding: 6px 13px;
         font-size: 15px;
         border-radius: 2px;
-        border: 1px solid #000;
+        /* border: 1px solid #000; */
     }
     .page_number:hover {
         background: #777;
     }
     .paginator_container a {
-        border: 1px solid #000;
-        background: rgb(34, 83, 122);
+        /* border: 1px solid #000; */
+        /* background: rgb(34, 83, 122); */
         color: #fff;
         padding: 5px 10px;
         font-size: 12px;
@@ -1306,7 +1300,7 @@ audio {
     }
     .views {
         position: relative;
-        left: 100px;
+        left: 130px;
     }
     .top_title h1 {
         font-size: 30px;
@@ -1321,7 +1315,7 @@ audio {
         font-weight: 300;
         font-size: 10px;
         color: #666;
-        text-transform: uppercase;
+        /* text-transform: uppercase; */
     }
     .artwork img {
         width: 100%;
@@ -1354,16 +1348,16 @@ audio {
     }
     .related_posts_wrapper {
         padding: 6% 1% 10% 1%;
-        overflow: hidden;
+        overflow: scroll;
     }
     .card_wrapper_3 {
         width: 100%;
         height: 120px;
-        overflow: hidden;
+        /* overflow: hidden; */
     }
     .card_wrapper_3 img {
         height: auto;
-        width: 95px;
+        width: 100%;
         background-size: contain;
     }
     .related_posts_wrapper h3 {
@@ -1385,7 +1379,7 @@ audio {
     .first_block a {
         text-align: center;
         padding: 2%;
-        font-size: 12px;
+        font-size: 14px;
     }
     .related_posts_videos_wrapper {
         margin-top: 6%;

@@ -11,7 +11,7 @@ post_details.name }} {% endblock %} {% block title2 %} {{ post_details.title }} 
                             <h1>{{ post_details.name }} - {{ post_details.title }}</h1>
                         </div>
                         <div class="name">
-                            <p>Posted by: {{ post_details.posted_by }} - {{ post_details.time_stamp|timesince }} ago.</p>
+                            <p> <i class="far fa-clock"></i> {{ post_details.time_stamp|timesince }} ago - {{post_details.posted_by}}.</p>
                             <p class="views"><i id class="fas fa-eye"></i> {{ post_details.post_views|intcomma}}</p>
                         </div>
                         <div class="icons_wrapper">
@@ -129,7 +129,7 @@ post_details.name }} {% endblock %} {% block title2 %} {{ post_details.title }} 
                         <h1 class="name"><a href="{{ post.get_absolute_url }}">{{ post.name }} - {{ post.title }}</a></h1>
                         <p><i class="fas fa-tags "></i>{{post.category}}</p>
                         <p>{{post.description|truncatewords:8}}</p>
-                        <small>Posted by: {{post.posted_by}}, {{ post.time_stamp }}.</small>
+                        <small><i class="far fa-clock"></i> {{ post.time_stamp|timesince }} ago - {{post.posted_by}}.</small>
                     </div>
                     {% endfor %}
                 </div>

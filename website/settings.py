@@ -18,9 +18,9 @@ from decouple import config
 # from django.core.wsgi import get_wsgi_application
 
 
-# import cloudinary
-# import cloudinary.uploader
-# import cloudinary.api
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 
 # BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -36,22 +36,22 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['zedbuzzers.herokuapp.com', '127.0.0.1']
 
 
-# SECURE_BROWSER_XSS_FILTER = True
-# X_FRAME_OPTIONS = 'DENY'
-# SECURE_SSL_REDIRECT = True
-# SECURE_HSTS_SECONDS = 3600 
-# SECURE_HSTS_INCLUDE_SUBDOMAINS = True 
-# SECURE_HSTS_PRELOAD = True
-# SECURE_CONTENT_TYPE_NOSNIFF = True
-# SESSION_COOKIE_SECURE = True
-# CSRF_COOKIE_SECURE = True
-# SECURE_FRAME_DENY = True
-# SESSION_COOKIE_HTTPONLY = True
+SECURE_BROWSER_XSS_FILTER = True
+X_FRAME_OPTIONS = 'DENY'
+SECURE_SSL_REDIRECT = True
+SECURE_HSTS_SECONDS = 3600 
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True 
+SECURE_HSTS_PRELOAD = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_FRAME_DENY = True
+SESSION_COOKIE_HTTPONLY = True
 
 
 
@@ -69,8 +69,8 @@ INSTALLED_APPS = [
     'newwebsite',
     'django.contrib.humanize',
     'whitenoise.runserver_nostatic',
-    # 'cloudinary_storage',
-    # 'cloudinary',
+    'cloudinary_storage',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -176,11 +176,11 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 
 
-# cloudinary.config( 
-#   cloud_name = "godwinb", 
-#   api_key = "339515159917774", 
-#   api_secret = "7hBeCAaSuj2Nm9KabqkH0Ku5Mds" 
-# )
+cloudinary.config( 
+  cloud_name = "godwinb", 
+  api_key = "339515159917774", 
+  api_secret = "7hBeCAaSuj2Nm9KabqkH0Ku5Mds" 
+)
 
 
 django_heroku.settings(locals())

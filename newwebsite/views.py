@@ -75,7 +75,7 @@ def category_list_view(request, slug):
   if request.method == 'GET':
     category_links = Category.objects.all()
     categories = get_object_or_404(Category, slug=slug)
-    category_posts = Post.objects.filter(category=categories)
+    category_posts = Post.objects.filter(category=categories).order_by('-time_stamp')
     posts = category_posts
     category_trending_posts = Post.objects.filter(category=categories).order_by('-post_views')
     ads = Ads.objects.all().order_by('-id')

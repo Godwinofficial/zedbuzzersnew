@@ -1,10 +1,10 @@
-# import cloudinary
 from django.db import models
 from django.db.models.deletion import CASCADE
 from django.urls import reverse
-# from cloudinary.models import CloudinaryField
-# Create your models here.
+from cloudinary.models import CloudinaryField
 
+
+# Create your models here.
 
 class Category(models.Model):
   title = models.CharField(max_length=100)
@@ -16,8 +16,8 @@ class Category(models.Model):
 
 
 class Post(models.Model):
-  image       = models.ImageField(null=True, upload_to='images/')
-  file        = models.FileField(null=True, upload_to='files/')
+  image       = CloudinaryField('images')
+  file        = CloudinaryField('files', resource_type='raw')
   name        = models.CharField(null=True, max_length=100)
   title       = models.CharField(max_length=100, null=True)
   category    = models.ForeignKey(Category, on_delete=CASCADE)
@@ -38,7 +38,7 @@ class Post(models.Model):
 
 class Ads(models.Model):
   name        = models.CharField(max_length=500, null=True)
-  ad_file     = models.FileField(null=True, upload_to='ads/')
+  ad_file     = CloudinaryField('images')
 
   def __str__(self):
     return self.name
