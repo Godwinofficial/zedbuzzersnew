@@ -38,7 +38,7 @@ class Post(models.Model):
 
 class Ads(models.Model):
   name        = models.CharField(max_length=500, null=True)
-  ad_file     = CloudinaryField('images')
+  ad_file     = CloudinaryField('images', null=True, resource_type='raw')
 
   def __str__(self):
     return self.name
