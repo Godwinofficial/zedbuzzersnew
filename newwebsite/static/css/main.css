@@ -141,6 +141,7 @@ body {
     font-size: 21px;
     color: #444;
     font-weight: 800;
+    word-break: break-all;
     cursor: pointer;
 }
 
@@ -236,6 +237,7 @@ body {
 }
 
 .block1_container .text p {
+    word-break: break-all;
     padding-top: 5px;
     font-size: 13px;
     color: #555;
@@ -314,6 +316,7 @@ body {
     color: #444;
     font-weight: 800;
     cursor: pointer;
+    word-break: break-all;
 }
 
 .search_box_mobile_container {
@@ -329,6 +332,7 @@ body {
 }
 
 .block2_container .text2 p {
+    word-break: break-all;
     padding-top: 8px;
     font-size: 14px;
     color: #555;
@@ -1142,11 +1146,13 @@ audio {
     } */
     .block1_container .text h1 a {
         font-size: 14px;
+        word-break: break-all;
         /* text-transform: uppercase; */
     }
     .block1_container .text p {
         padding-top: 5px;
         font-size: 12px;
+        word-break: break-all;
     }
     .block1_container .text small {
         font-size: 9px;
@@ -1198,10 +1204,12 @@ audio {
     }
     .block2_container .text2 h1 a {
         font-size: 16px;
+        word-break: break-all;
         /* text-transform: uppercase; */
     }
     .block2_container .text2 p {
         font-size: 12px;
+        word-break: break-all;
     }
     .block2_container .text2 small {
         font-size: 9px;
