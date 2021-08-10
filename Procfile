@@ -1,2 +1,1 @@
-web: gunicorn website.wsgi --log-file -
-web: gunicorn website:app --timeout 3
+web: gunicorn website.wsgi --timeout 1200 --keep-alive 1200 --log-file - 
