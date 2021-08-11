@@ -1,5 +1,5 @@
 {% extends 'base.html'%} {% load static %} {% load humanize %} {% block title %} Download | {{ post_details.name }} - {{ post_details.title }} - Zedbuzzers{% endblock %} {% block image %} {{ post_details.image.url }} {% endblock %} {% block name %} {{
-post_details.name }} {% endblock %} {% block description %} {{ post_details.description}} {% endblock %} {% block url %} {{post_details.file.url }} {% endblock %} {% block content %}
+post_details.name }} - {{ post_details.title }} {% endblock %} {% block description %} {{ post_details.description}} {% endblock %} {% block url %} {{post_details.file.url }} {% endblock %} {% block content %}
 <div class="main">
     <div class="content_wrapper">
         <div class="content_wrapper4">
