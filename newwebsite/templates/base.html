@@ -9,9 +9,9 @@
     <!-- <meta name="theme-color" content="steelblue"> -->
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon.ico' %}" />
     <meta property="og:image" content="{% block image %}{% endblock %}" />
-    <!-- <meta property="og:title" content="{% block name %}{% endblock %} - {% block title2 %}{% endblock %}" /> -->
+    <meta property="og:title" content="{% block name %}{% endblock %}" />
     <meta property="og:description" content="{% block description %} {% endblock %}" />
-    <!-- <meta property="og:url" content="{% block url %}{% endblock %}" /> -->
+    <meta property="og:url" content="{% block url %}{% endblock %}" />
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
     <title>{% block title %}{% endblock %}</title>
@@ -19,6 +19,39 @@
 </head>
 
 <body>
+
+    <!-- Messenger Chat Plugin Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Chat Plugin code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+        var chatbox = document.getElementById('fb-customer-chat');
+        chatbox.setAttribute("page_id", "848603148843610");
+        chatbox.setAttribute("attribution", "biz_inbox");
+
+        window.fbAsyncInit = function() {
+            FB.init({
+                xfbml: true,
+                version: 'v11.0'
+            });
+        };
+
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+
+
+
     <div class="app">
         <div class="container">
             <div class="mobile_nav">
@@ -82,6 +115,8 @@
             </div>
         </div>
         {% block content %} replace {% endblock %}
+
+
         <div class="footer ">
 
 

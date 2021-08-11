@@ -70,7 +70,7 @@
                             </div>
                             <div class="text2 ">
                                 <h1 class="name "><a href="{{ post.get_absolute_url }}">{{ post.name }} - {{ post.title }}</a></h1>
-                                <p> <i class="fas fa-tags "></i> {{post.category}}</p>
+                                <p> <i class="fas fa-tags "></i> {{ post.category }}</p>
                                 <p>{{post.description|truncatewords:10}}</p>
                                 <small><i class="far fa-clock"></i> {{ post.time_stamp|timesince }} ago - {{post.posted_by}}.</small>
                             </div>
