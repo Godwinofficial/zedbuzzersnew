@@ -521,13 +521,15 @@ body {
 }
 
 .description p {
-    font-size: 18px;
+    font-size: 17px;
     color: #444;
-    font-weight: 300;
-    padding: 3% 1;
+    font-weight: 400;
+    padding: 2% 1%;
+    font-family: sans, Ubuntu, Helvetica, sans-serif;
     word-break: break-all;
-    font-family: sans, ubuntu Arial, Helvetica, sans-serif;
     word-spacing: 4px;
+    font-family: Arial, Helvetica, sans-serif;
+    word-spacing: 2px;
 }
 
 .youtube iframe {
