@@ -2,7 +2,6 @@ from django.db import models
 from django.db.models.deletion import CASCADE
 from django.urls import reverse
 from cloudinary.models import CloudinaryField
-# from embed_video.fields import EmbedVideoField
 
 
 # Create your models here.
