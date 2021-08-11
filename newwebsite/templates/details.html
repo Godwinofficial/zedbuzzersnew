@@ -1,5 +1,5 @@
-{% extends 'base.html'%} {% load static %} {% load humanize %} {% block title %} Download | {{ post_details.name }} - {{ post_details.title }} - Zedbuzzers{% endblock %} {% block image %} {{ post_details.image.url }} {% endblock %} {% block name %} {{
-post_details.name }} {% endblock %} {% block title2 %} {{ post_details.title }} {% endblock %} {% block description %} {{ post_details.description}} {% endblock %} {% block url %} {{post_details.file.url }} {% endblock %} {% block content %}
+{% extends 'base.html'%} {% load static %} {% load humanize %}{% block title %} Download | {{ post_details.name }} - {{ post_details.title }} - Zedbuzzers{% endblock %} {% block image %} {{ post_details.image.url }} {% endblock %} {% block name %} {{
+post_details.name }} {% endblock %} {% block title2 %} {{ post_details.title }} {% endblock %} {% block description %} {{ post_details.description}} {% endblock %} {% block url %} {{post_details.file.url }} {% endblock %}{% block content %}
 <div class="main">
     <div class="content_wrapper">
         <div class="content_wrapper4">
@@ -51,6 +51,11 @@ post_details.name }} {% endblock %} {% block title2 %} {{ post_details.title }} 
                               </audio>
                             <a href="{{post_details.file.url }}" download="{{post_details.file.url}}"><button class="download_button">Download {{ post_details.name }} - {{ post_details.title }}</button></a>
                         </div>
+                        {% if post_details.link %}
+                        <div class="youtube">
+                            <iframe src="{{ post_details.link }}" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        {% else %} {% endif %}
                     </div>
                     <div class="related_posts_wrapper">
                         <h3>Related posts</h3>
@@ -146,4 +151,4 @@ post_details.name }} {% endblock %} {% block title2 %} {{ post_details.title }} 
     </div>
 </div>
 
-{% endblock %}
+{% endblock%}

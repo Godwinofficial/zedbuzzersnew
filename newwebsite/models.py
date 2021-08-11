@@ -2,6 +2,7 @@ from django.db import models
 from django.db.models.deletion import CASCADE
 from django.urls import reverse
 from cloudinary.models import CloudinaryField
+# from embed_video.fields import EmbedVideoField
 
 
 # Create your models here.
@@ -16,14 +17,15 @@ class Category(models.Model):
 
 
 class Post(models.Model):
-  image       = CloudinaryField('images')
-  file        = CloudinaryField('files', resource_type='raw')
-  name        = models.CharField(null=True, max_length=100)
-  title       = models.CharField(max_length=100, null=True)
+  image       = CloudinaryField('images', blank=True)
+  file        = CloudinaryField('files', resource_type='raw', blank=True)
+  link        = models.URLField(blank=True)
+  name        = models.CharField(blank=True, max_length=100)
+  title       = models.CharField(blank=True, max_length=100)
   category    = models.ForeignKey(Category, on_delete=CASCADE)
   time_stamp  = models.DateTimeField(auto_created=True)
   posted_by   = models.CharField(max_length=30, default='Godwin')
-  description = models.TextField(max_length=50000)
+  description = models.TextField(blank=True, max_length=50000)
   post_views  = models.IntegerField(default=0)
   slug        = models.SlugField(null=True, unique=True)
 
