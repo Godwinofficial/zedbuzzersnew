@@ -1166,6 +1166,9 @@ audio {
         display: inline-block;
         width: 100%;
     }
+    .card_wrapper_2 {
+        background: red;
+    }
     .block2 img {
         width: 100%;
         filter: brightness(90%);

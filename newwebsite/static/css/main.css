@@ -1175,6 +1175,10 @@ audio {
         margin-top: 10%;
         padding: 0 2%;
     }
+    .card_wrapper_2 {
+        background: none;
+        box-shadow: none;
+    }
     .block2_container {
         margin-top: 1%;
         margin-bottom: 3%;
