@@ -16,8 +16,8 @@ class Category(models.Model):
 
 
 class Post(models.Model):
-  image       = CloudinaryField('images', blank=True)
-  file        = CloudinaryField('files', resource_type='raw', blank=True)
+  image       = CloudinaryField('images', use_filename=True, unique_filename=False, blank=True)
+  file        = CloudinaryField('files',use_filename=True, unique_filename=False, resource_type='raw', blank=True)
   link        = models.URLField(null=True, blank=True)
   name        = models.CharField(blank=True, max_length=100)
   title       = models.CharField(blank=True, max_length=100)
