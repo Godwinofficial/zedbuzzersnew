@@ -1,5 +1,5 @@
-{% extends 'base.html'%} {% load static %} {% load humanize %} {% block title %} Download | {{ post_details.name }} - {{ post_details.title }} - Zedbuzzers{% endblock %} {% block image %} {{ post_details.image.url }} {% endblock %} {% block name %} {{
-post_details.name }} - {{ post_details.title }} {% endblock %} {% block description %} {{ post_details.description}} {% endblock %} {% block url %} {{post_details.file.url }} {% endblock %} {% block content %}
+{% extends 'base.html'%} {% load static %} {% load humanize %} {% block title %} {{ post_details.name }} - {{ post_details.title }} - Zedbuzzers{% endblock %} {% block image %} {{ post_details.image.url }} {% endblock %} {% block name %} {{ post_details.name
+}} - {{ post_details.title }} {% endblock %} {% block description %} {{ post_details.description}} {% endblock %} {% block url %} {{post_details.file.url }} {% endblock %} {% block content %}
 <div class="main">
     <div class="content_wrapper">
         <div class="content_wrapper4">
@@ -64,7 +64,7 @@ post_details.name }} - {{ post_details.title }} {% endblock %} {% block descript
                             <div class="card_wrapper_3">
                                 <div class="first_block">
                                     <a href="{{ post.get_absolute_url }}"><img src="{{ post.image.url }}" alt=""></a>
-                                    <h1><a href="{{ post.get_absolute_url }}">{{ post.name }} - {{ post.title }}</a></h1>
+                                    <h1><a href="{{ post.get_absolute_url }}">{{ post.name|capfirst }} - {{ post.title|capfirst }}</a></h1>
                                 </div>
                             </div>
                             {% endfor %}
@@ -78,7 +78,7 @@ post_details.name }} - {{ post_details.title }} {% endblock %} {% block descript
                         <div class="card_wrapper_3">
                             <div class="first_block1">
                                 <a href="{{ post.get_absolute_url }}"><img src="{{ post.image.url }}" alt=""></a>
-                                <h1><a href="{{ post.get_absolute_url }}">{{ post.name }} - {{ post.title }}</a></h1>
+                                <h1><a href="{{ post.get_absolute_url }}">{{ post.name|capfirst }} - {{ post.title|capfirst }}</a></h1>
                             </div>
                         </div>
                         {% endfor %}
@@ -93,7 +93,7 @@ post_details.name }} - {{ post_details.title }} {% endblock %} {% block descript
                     <div class="card_wrapper_3">
                         <div class="first_block1">
                             <a href="{{ post.get_absolute_url }}"><img src="{{ post.image.url }}" alt=""></a>
-                            <h1><a href="{{ post.get_absolute_url }}">{{ post.name }} - {{ post.title }}</a></h1>
+                            <h1><a href="{{ post.get_absolute_url }}">{{ post.name|capfirst }} - {{ post.title|capfirst }}</a></h1>
                             <p>{{ post.description|truncatewords:'8' }}</p>
                         </div>
                     </div>
@@ -131,7 +131,7 @@ post_details.name }} - {{ post_details.title }} {% endblock %} {% block descript
                         <a href="{{ post.get_absolute_url }}"><img src="{{ post.image.url }} " alt=" "></a>
                     </div>
                     <div class="text2 ">
-                        <h1 class="name"><a href="{{ post.get_absolute_url }}">{{ post.name }} - {{ post.title }}</a></h1>
+                        <h1 class="name"><a href="{{ post.get_absolute_url }}">{{ post.name|capfirst }} - {{ post.title|capfirst }}</a></h1>
                         <p><i class="fas fa-tags "></i>{{post.category}}</p>
                         <p>{{post.description|truncatewords:8}}</p>
                         <small><i class="far fa-clock"></i> {{ post.time_stamp|timesince }} ago - {{post.posted_by}}.</small>
