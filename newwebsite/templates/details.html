@@ -53,7 +53,7 @@
                             <a href="{{ post_details.file.url }}" download="{{ post_details.file.url }}"><button class="download_button">Download {{ post_details.name }} - {{ post_details.title }}</button></a>
                         </div>
                         {% else %}
-                        <p class="more_news"><a href="">Read More News</a></p>
+                        <p class="more_news"><a href="{% url 'category' news_posts %}">read more news</a></p>
                         {% endif %} {% if post_details.link %}
                         <div class="youtube">
                             <iframe src="{{ post_details.link }}" frameborder="0" allowfullscreen></iframe>

@@ -1370,14 +1370,10 @@ audio {
         display: none;
     }
     .description p {
-        font-size: 17px;
         color: #444;
-        font-weight: 200;
-        padding: 2%;
-        font-family: sans, Ubuntu, Helvetica, sans-serif;
-        word-break: normal;
-        word-spacing: 2px;
-        line-height: 150%;
+        font-weight: 400;
+        font-size: 14px;
+        text-transform: uppercase;
     }
     .youtube iframe {
         width: 100%;
@@ -1399,8 +1395,9 @@ audio {
         color: #444;
         text-decoration: underline;
         font-weight: 400;
-        font-size: 14px;
+        font-size: 13px;
         text-transform: uppercase;
+        margin: 1%;
     }
     .more_news a:hover {
         color: rgb(49, 134, 130);

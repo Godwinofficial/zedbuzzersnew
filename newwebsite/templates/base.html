@@ -99,7 +99,7 @@
                         <ul>
                             <li><a href="{% url 'home' %} ">Home</a></li>
                             {% for item in category_links %}
-                            <li class="{% if url_name == 'category_links'%} active {% endif %}"><a href="{% url 'category' item|slugify %} ">{{ item }}</a></li>
+                            <li><a href="{% url 'category' item|slugify %} ">{{ item }}</a></li>
                             {% endfor %}
                             <li><a href="{% url 'about' %}">About us</a></li>
 
