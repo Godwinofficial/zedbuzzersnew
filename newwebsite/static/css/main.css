@@ -1374,7 +1374,7 @@ audio {
         color: #333;
         font-weight: 400;
         padding: 2% 1%;
-        font-family: sans-serif, Ubuntu, Helvetica, sans-serif;
+        font-family: sans, Ubuntu, Helvetica, sans-serif;
         word-break: normal;
         word-spacing: 2px;
         line-height: 140%;
