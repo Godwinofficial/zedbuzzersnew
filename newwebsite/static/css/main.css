@@ -143,6 +143,7 @@ body {
     font-weight: 800;
     word-break: break-all;
     cursor: pointer;
+    text-transform: capitalize;
 }
 
 .block1_container .text h1 a:hover {
@@ -317,6 +318,7 @@ body {
     font-weight: 800;
     cursor: pointer;
     word-break: break-all;
+    text-transform: capitalize;
 }
 
 .search_box_mobile_container {
@@ -459,6 +461,7 @@ body {
     font-size: 54px;
     font-weight: 550;
     color: rgb(49, 134, 130);
+    text-transform: capitalize;
 }
 
 .name {
@@ -559,19 +562,15 @@ audio {
 }
 
 .more_news a {
-    color: #eee;
-    /* text-decoration: underline; */
+    color: #444;
+    text-decoration: underline;
     font-weight: 400;
-    background: rgb(64, 70, 75);
-    padding: 4px 13px;
-    border-radius: 52px;
     font-size: 14px;
     text-transform: uppercase;
 }
 
 .more_news a:hover {
-    color: #fff;
-    background: rgb(49, 134, 130);
+    color: rgb(49, 134, 130);
 }
 
 .trends_wr {
@@ -724,6 +723,7 @@ audio {
     color: #444;
     font-weight: 500;
     cursor: pointer;
+    text-transform: capitalize;
 }
 
 .first_block a:hover {
@@ -783,6 +783,7 @@ audio {
     color: #444;
     font-weight: 500;
     cursor: pointer;
+    text-transform: capitalize;
 }
 
 .first_block1 a:hover {
@@ -1369,13 +1370,14 @@ audio {
         display: none;
     }
     .description p {
-        font-size: 16px;
-        color: #333;
-        font-weight: 400;
+        font-size: 17px;
+        color: #444;
+        font-weight: 200;
         padding: 2% 1%;
-        font-family: sans, Ubuntu, Helvetica, sans-serif;
+        font-family: sans-serif, Ubuntu, Helvetica, sans-serif;
         word-break: normal;
         word-spacing: 2px;
+        line-height: 140%;
     }
     .youtube iframe {
         width: 100%;
@@ -1394,18 +1396,14 @@ audio {
         text-align: center;
     }
     .more_news a {
-        color: #eee;
-        /* text-decoration: underline; */
+        color: #444;
+        text-decoration: underline;
         font-weight: 400;
-        background: rgb(64, 70, 75);
-        padding: 4px 11px;
-        border-radius: 52px;
-        font-size: 13px;
+        font-size: 14px;
         text-transform: uppercase;
     }
     .more_news a:hover {
-        color: #fff;
-        background: rgb(49, 134, 130);
+        color: rgb(49, 134, 130);
     }
     .related_posts_wrapper {
         padding: 6% 1% 10% 1%;
