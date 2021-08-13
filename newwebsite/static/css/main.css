@@ -1371,8 +1371,8 @@ audio {
     }
     .description p {
         font-size: 17px;
-        color: #444;
-        font-weight: 200;
+        color: #333;
+        font-weight: 400;
         padding: 2% 1%;
         font-family: sans-serif, Ubuntu, Helvetica, sans-serif;
         word-break: normal;
