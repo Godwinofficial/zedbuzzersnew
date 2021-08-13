@@ -29,7 +29,7 @@
                             <a href="{{ post.get_absolute_url }}"><img src="{{post.image.url}} " alt=" "></a>
                         </div>
                         <div class="text">
-                            <h1 class="name"><a href="{{ post.get_absolute_url }}">{{ post.name|capfirst}} - {{ post.title|capfirst }}</a></h1>
+                            <h1 class="name"><a href="{{ post.get_absolute_url }}">{{ post.name|truncatewords:8|capfirst}} - {{ post.title|capfirst }}</a></h1>
                             <p> <i class="fas fa-tags "></i> {{post.category}}</p>
                             <p>{{post.description|truncatewords:10}}</p>
                             <small><i class="far fa-clock"></i> {{ post.time_stamp|timesince }} ago - {{post.posted_by}}.</small>
