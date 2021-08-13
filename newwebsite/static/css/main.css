@@ -1358,7 +1358,7 @@ audio {
         font-weight: 400;
         padding: 2% 1%;
         font-family: sans, Ubuntu, Helvetica, sans-serif;
-        word-break: break-all;
+        /* word-break: break-all; */
         word-spacing: 4px;
         font-family: Arial, Helvetica, sans-serif;
         word-spacing: 2px;
