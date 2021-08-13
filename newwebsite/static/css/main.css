@@ -1393,16 +1393,19 @@ audio {
         width: 100%px;
         background-size: contain;
     }
+    .related_posts_text {
+        text-align: center;
+    }
     .related_posts_text p a {
-        color: #666;
+        color: #555;
         font-weight: 400;
     }
     .related_posts_text p {
         color: #555;
         /* font-weight: 400; */
-        font-size: 12px;
+        font-size: 10px;
         font-family: sans;
-        margin-top: 1%;
+        margin: 1%;
     }
     .related_posts_wrapper h3 {
         font-size: 21px;
