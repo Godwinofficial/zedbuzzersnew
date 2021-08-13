@@ -1375,9 +1375,9 @@ audio {
         font-weight: 400;
         padding: 2% 1%;
         font-family: sans, Ubuntu, Helvetica, sans-serif;
-        word-break: break-all;
+        word-break: normal;
         word-spacing: 4px;
-        text-transform: lowercase;
+        line-height: 130%;
     }
     .youtube iframe {
         width: 100%;
