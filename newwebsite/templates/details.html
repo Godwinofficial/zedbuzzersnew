@@ -1,5 +1,5 @@
-{% extends 'base.html'%} {% load static %} {% load humanize %} {% block title %} {{ post_details.name }} - {{ post_details.title }} - Zedbuzzers{% endblock %} {% block image %} {{ post_details.image.url }} {% endblock %} {% block name %} {{ post_details.name
-}} - {{ post_details.title }} {% endblock %} {% block description %} {{ post_details.description}} {% endblock %} {% block url %} {{post_details.file.url }} {% endblock %} {% block content %}
+{% extends 'base.html'%} {% load static %} {% load humanize %} {% block title %}{{ post_details.name }} - {{ post_details.title }} - Zedbuzzers{% endblock %} {% block image %} {{ post_details.image.url }} {% endblock %} {% block name %} {{ post_details.name}}
+- {{ post_details.title }} {% endblock %} {% block description %} {{ post_details.description}} {% endblock %} {% block url %} {{post_details.file.url }} {% endblock %} {% block content %}
 <div class="main">
     <div class="content_wrapper">
         <div class="content_wrapper4">
@@ -12,7 +12,7 @@
                         </div>
                         <div class="name">
                             <p> <i class="far fa-clock"></i> {{ post_details.time_stamp|timesince }} ago - {{post_details.posted_by}}.</p>
-                            <p class="views"><i id class="fas fa-eye"></i> {{ post_details.post_views|intcomma}}</p>
+                            <p class="views"><i id class="fas fa-eye"></i> {{ post_details.post_views|intcomma }}</p>
                         </div>
                         <div class="icons_wrapper">
                             <ul>
@@ -44,14 +44,17 @@
                         <div class="description">
                             <p>{{ post_details.description|linebreaks }}</p>
                         </div>
+                        {% if not news_posts == post_details.category %}
                         <div class="download_button_">
                             <audio controls>
                                 <source src="{{ post_details.file.url }}" type="audio/mpeg">
                                 Your browser does not support the audio tag.
                               </audio>
-                            <a href="{{post_details.file.url }}" download="{{post_details.file.url}}"><button class="download_button">Download {{ post_details.name }} - {{ post_details.title }}</button></a>
+                            <a href="{{ post_details.file.url }}" download="{{ post_details.file.url }}"><button class="download_button">Download {{ post_details.name }} - {{ post_details.title }}</button></a>
                         </div>
-                        {% if post_details.link %}
+                        {% else %}
+                        <p class="more_news"><a href="">Read More News</a></p>
+                        {% endif %} {% if post_details.link %}
                         <div class="youtube">
                             <iframe src="{{ post_details.link }}" frameborder="0" allowfullscreen></iframe>
                         </div>

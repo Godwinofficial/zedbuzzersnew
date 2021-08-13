@@ -59,6 +59,7 @@ def post_detail_view(request, slug):
 
 
     context = {
+      'news_posts': news_posts,
       'news': news,
       'post_details': post_details,
       'category_links': category_links,

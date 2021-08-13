@@ -13,7 +13,7 @@ from newwebsite.views import (
 
 urlpatterns = [
   path('', home_list_view, name='home'),
-  path('download/<slug:slug>/', post_detail_view, name='post-details'), 
+  path('details/<slug:slug>/', post_detail_view, name='post-details'), 
   path('category/<slug:slug>/', category_list_view, name='category'),
   path('about_us/', about_us_list_view, name='about'),
   path('privacy_policy/', privacy_policy_list_view, name='privacy_policy'),
