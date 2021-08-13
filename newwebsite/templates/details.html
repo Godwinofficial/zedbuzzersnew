@@ -64,7 +64,10 @@
                             <div class="card_wrapper_3">
                                 <div class="first_block">
                                     <a href="{{ post.get_absolute_url }}"><img src="{{ post.image.url }}" alt=""></a>
-                                    <h1><a href="{{ post.get_absolute_url }}">{{ post.name|capfirst }} - {{ post.title|capfirst }}</a></h1>
+                                </div>
+                                <div class="related_posts_text">
+                                    <p><a href="{{ post.get_absolute_url }}">{{ post.name|capfirst }} - {{ post.title|capfirst }}</a></p>
+                                    <p>{{ post_details.description|linebreaks }}</p>
                                 </div>
                             </div>
                             {% endfor %}
@@ -78,7 +81,10 @@
                         <div class="card_wrapper_3">
                             <div class="first_block1">
                                 <a href="{{ post.get_absolute_url }}"><img src="{{ post.image.url }}" alt=""></a>
-                                <h1><a href="{{ post.get_absolute_url }}">{{ post.name|capfirst }} - {{ post.title|capfirst }}</a></h1>
+                            </div>
+                            <div class="related_posts_text">
+                                <p><a href="{{ post.get_absolute_url }}">{{ post.name|capfirst }} - {{ post.title|capfirst }}</a></p>
+                                <p>{{ post_details.description|linebreaks }}</p>
                             </div>
                         </div>
                         {% endfor %}
@@ -93,8 +99,10 @@
                     <div class="card_wrapper_3">
                         <div class="first_block1">
                             <a href="{{ post.get_absolute_url }}"><img src="{{ post.image.url }}" alt=""></a>
-                            <h1><a href="{{ post.get_absolute_url }}">{{ post.name|capfirst }} - {{ post.title|capfirst }}</a></h1>
-                            <p>{{ post.description|truncatewords:'8' }}</p>
+                        </div>
+                        <div class="related_posts_text">
+                            <p><a href="{{ post.get_absolute_url }}">{{ post.name|capfirst }} - {{ post.title|capfirst }}</a></p>
+                            <p>{{ post_details.description|linebreaks }}</p>
                         </div>
                     </div>
                     {% endfor %}

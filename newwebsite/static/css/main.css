@@ -674,8 +674,8 @@ audio {
 }
 
 .card_wrapper_3 {
-    background: #fff;
-    box-shadow: 1px 1px 7px #999;
+    /* background: #fff;
+    box-shadow: 1px 1px 7px #999; */
     width: 100%;
     height: 200px;
     overflow: auto;
@@ -1353,14 +1353,12 @@ audio {
         display: none;
     }
     .description p {
-        font-size: 15px;
-        color: #444;
+        font-size: 16px;
+        color: #333;
         font-weight: 400;
         padding: 2% 1%;
         font-family: sans, Ubuntu, Helvetica, sans-serif;
-        /* word-break: break-all; */
-        word-spacing: 4px;
-        font-family: Arial, Helvetica, sans-serif;
+        word-break: normal;
         word-spacing: 2px;
     }
     .youtube iframe {
@@ -1381,16 +1379,27 @@ audio {
     }
     .related_posts_wrapper {
         padding: 6% 1% 10% 1%;
-        overflow-y: scroll;
+        overflow-y: none;
     }
     .card_wrapper_3 {
+        /* background: #fff;
+        box-shadow: 1px 1px 7px #999; */
         width: 100%;
-        height: 120px;
-        /* overflow: hidden; */
+        height: 240px;
+        overflow: hidden;
+    }
+    .related_posts_text p a {
+        color: #666;
+        font-weight: 400;
+    }
+    .related_posts_text p {
+        color: #666;
+        /* font-weight: 400; */
+        font-size: 12px;
     }
     .card_wrapper_3 img {
         height: auto;
-        width: 100%;
+        width: 200px;
         background-size: contain;
     }
     .related_posts_wrapper h3 {
