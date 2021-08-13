@@ -1376,7 +1376,7 @@ audio {
         padding: 2% 1%;
         font-family: sans, Ubuntu, Helvetica, sans-serif;
         word-break: normal;
-        word-spacing: 2px;
+        word-spacing: 4px;
         line-height: 130%;
     }
     .youtube iframe {
