@@ -1132,14 +1132,12 @@ audio {
         margin: 0% 0%;
     }
     .main_content {
-        display: block;
+        display: inherit;
     }
     .block1 {
         background: #fff;
         padding: 0 1.5%;
         box-shadow: 1px 0px 4px #bbb;
-        padding-top: 10%;
-        margin-top: -10%;
     }
     .block1 h2 {
         font-size: 25px;
@@ -1548,8 +1546,8 @@ audio {
         font-size: 18px;
     }
     .logo_mobile img {
-        width: 160px;
-        /* height: 100%; */
+        width: 140%;
+        /* background: red; */
     }
     .logo_mobile {
         display: flex;
@@ -1567,5 +1565,8 @@ audio {
         width: 100%;
         height: 500px;
         display: none;
+    }
+    .logo_mobile_2 img {
+        width: 5%;
     }
 }
