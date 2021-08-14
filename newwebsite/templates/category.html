@@ -51,14 +51,17 @@
                     <h2>Trending {{ categories }}</h2>
                     {% for post in category_trending_posts|slice:'10' %}
                     <div class="block2_container">
-                        <div class="block2_content ">
-                            <a href="{{ post.get_absolute_url }}"><img src="{{post.image.url}} " alt=" "></a>
-                        </div>
-                        <div class="text2 ">
-                            <h1 class="name "><a href="{{ post.get_absolute_url }}">{{ post.name|capfirst }} - {{ post.title|capfirst }}</a></h1>
-                            <p><i class="fas fa-tags "></i> {{post.category}}</p>
-                            <p>{{ post.description|truncatewords:10 }}</p>
-                            <small><i class="far fa-clock"></i> {{ post.time_stamp|timesince }} ago - {{post.posted_by}}.</small>
+                        <div class="card_wrapper_2">
+
+                            <div class="block2_content ">
+                                <a href="{{ post.get_absolute_url }}"><img src="{{post.image.url}} " alt=" "></a>
+                            </div>
+                            <div class="text2 ">
+                                <h1 class="name "><a href="{{ post.get_absolute_url }}">{{ post.name|capfirst }} - {{ post.title|capfirst }}</a></h1>
+                                <p><i class="fas fa-tags "></i> {{post.category}}</p>
+                                <p>{{ post.description|truncatewords:10 }}</p>
+                                <small><i class="far fa-clock"></i> {{ post.time_stamp|timesince }} ago - {{post.posted_by}}.</small>
+                            </div>
                         </div>
                     </div>
                     {% endfor %}

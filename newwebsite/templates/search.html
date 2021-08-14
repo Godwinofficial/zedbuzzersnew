@@ -1,25 +1,39 @@
 {% extends 'base.html'%} {% load static %} {{errors}} {% block content %} {% if search_data %}
+
+
 <div class="main">
-    <div class="se_">
-        <div class="main_container ">
-            <div class="main_content ">
-                <div class="block1 ">
-                    <h1 class="search_h1">Search results for: ' {{search}} '</h1>
-                    {% for search in search_data|slice:15 %}
-                    <div class="block1_container ">
+    <div class="main_container ">
+        <div class="main_content ">
+            <div class="block1 ">
+                <h2 style="border: none;" class="search_h1">Search results for: " {{ search }} "</h2>
+                {% for search in search_data|slice:15 %}
+                <div class="block1_container ">
+                    <div class="card_wrapper">
                         <div class="block1_content ">
-                            <a href="{{ search.get_absolute_url }}"><img src="{{ search.image.url }} " alt=" "></a>
+                            <a href="{{ search.get_absolute_url }}"><img src="{{search.image.url}} " alt=" "></a>
                         </div>
-                        <div class="text ">
-                            <h1 class="nama"><a href="{{search.get_absolute_url}}">{{ search.name }} - {{ search.title }}</a></h1>
-                            <p> <i class="fas fa-tags "></i> {{ search.category }}</p>
-                            <p>{{search.description|truncatewords:10}}</p>
-                            <small>Posted by: {{search.posted_by}}, {{ search.time_stamp|timesince }}.</p></small>
+                        <div class="text">
+                            <h1 class="name"><a href="{{ search.get_absolute_url }}">{{ search.name|truncatewords:8|capfirst}} - {{ search.title|capfirst }}</a></h1>
+                            <p> <i class="fas fa-tags "></i> {{search.category}}</p>
+                            <p>{{search.description|truncatewords:8}}</p>
+                            <small><i class="far fa-clock"></i> {{ search.time_stamp|timesince }} ago - {{search.posted_by}}.</small>
                         </div>
                     </div>
-                    {% endfor%}
-
                 </div>
+                {% endfor %}
+            </div>
+
+            <div class="block2_wrapper">
+                <div class="content__">
+                    <form action="{% url 'search' %}" method="GET">
+                        <div class="search2_wr"></div>
+                        <div class="search2">
+                            <input type="text" name="search" placeholder="Search..." required>
+                            <button type="submit"> <i class="fas fa-search"></i></button>
+                        </div>
+                    </form>
+                </div>
+
                 {% else %}
                 <div class="noresult_cont">
                     <img style="width: 65%; margin:2% 0 0 20%;" id="noresult" src="{% static 'no-result.png' %}" alt="">
@@ -27,32 +41,47 @@
 
                 <div class="noresult_cont2">
                     <img style="width: 100%; margin:2% 0 38% 1%;" id="noresult" src="{% static 'no-result.png' %}" alt="">
-
                 </div>
                 {% endif %}
-                <!-- <div class="trending_search_posts">
-                            <h2>trending</h2>
-                            <div class="block2_container">
-                                {% for post in search_trending_pots|slice:'10' %}
-                                <div class="block2_content_2 ">
-                                    <a href="{{ post.get_absolute_url }}"><img src="{{ post.image.url}} " alt=" "></a>
-                                </div>
-                                <div class="text2 ">
-                                    <h1 class="name "><a href="{{post.get_absolute_url}}">{{ post.name }} - {{ post.title }}</a></h1>
-                                    <p> <i class="fas fa-tags "></i> {{post.category}}</p>
-                                    <p>{{post.description|truncatewords:10}}</p>
-                                    <small>Posted by: {{ post.posted_by }}, {{ post.time_stamp|timesince }}.</p></small>
-                                </div>
-                                {% endfor %}
+
+
+                <div class="details_ads_container">
+                    <div class="fb">
+                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fzedbuzzers&tabs=timeline&width=310px&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" style="border:none;overflow:hidden"
+                            scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </div>
+                    <h2>advertisements</h2>
+                    {% for ad in ads|slice:'2' %}
+                    <div class="details_ads_block">
+                        <video playsinline autoplay muted loop>
+                            <source src="{{ ad.ad_file.url }}" type="video/mp4">
+                        </video>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="block2 ">
+                    <h2>Trending</h2>
+                    {% for post in search_trending_posts %}
+                    <div class="block2_container">
+                        <div class="card_wrapper_2">
+                            <div class="block2_content ">
+                                <a href="{{ post.get_absolute_url }}"><img src="{{post.image.url}} " alt=" "></a>
+
                             </div>
-                        
-                        </div> -->
+                            <div class="text2 ">
+                                <h1 class="name"><a href="{{ post.get_absolute_url }}">{{ post.name|truncatewords:8|capfirst}} - {{ post.title|capfirst }}</a></h1>
+                                <p> <i class="fas fa-tags "></i> {{post.category}}</p>
+                                <p>{{post.description|truncatewords:8}}</p>
+                                <small><i class="far fa-clock"></i> {{ post.time_stamp|timesince }} ago - {{post.posted_by}}.</small>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>
+
 </div>
-
-
-
 
 {% endblock %}

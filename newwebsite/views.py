@@ -119,8 +119,7 @@ def search_list_view(request):
     category_links = Category.objects.all()
     search = request.GET.get('search')
     search_data = Post.objects.all().filter(name__icontains=search).order_by('-time_stamp')
-    search_trending_pots = Post.objects.all().order_by('-time_stamp')
-
+    search_trending_posts = Post.objects.all().order_by('-post_views')
     posts = search_data
 
     paginator = Paginator(posts, 1)
@@ -144,7 +143,7 @@ def search_list_view(request):
       'search_data': search_data,
       'category_links': category_links,
       'search': search,
-      'search_trending_pots': search_trending_pots,
+      'search_trending_posts': search_trending_posts,
       'posts': posts,
       'page_range': page_range,
     }
