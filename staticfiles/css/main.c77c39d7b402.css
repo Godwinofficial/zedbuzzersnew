@@ -987,7 +987,7 @@ audio {
         display: block;
         position: fixed;
         width: 100%;
-        margin-left: -300%;
+        margin-top: -300%;
         transition: 0.5s ease;
         z-index: 666;
         /* padding-bottom: 5%; */
