@@ -181,7 +181,6 @@ cloudinary.config(
   api_key = "339515159917774", 
   api_secret = "7hBeCAaSuj2Nm9KabqkH0Ku5Mds",
   secure = "true", 
-#   use_filenme = "true",
 )
 
 

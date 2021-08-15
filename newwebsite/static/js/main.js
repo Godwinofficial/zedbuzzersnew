@@ -10,6 +10,8 @@ bars.addEventListener('click', () => {
     times.style.display = 'block';
     slide.style.transition = '0.5s'
     mobile_nav_top.style.transition = '1s'
+    times.style.transition = '10s'
+
 })
 
 
