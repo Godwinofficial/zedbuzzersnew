@@ -45,7 +45,7 @@ body {
     text-transform: uppercase;
     font-weight: 400;
     font-size: 18px;
-    padding: 10px;
+    padding: 5px;
     position: relative;
     top: 2px;
 }
@@ -959,7 +959,7 @@ audio {
     height: 500px;
 }
 
-@media only screen and (max-width: 920px) {
+@media only screen and (max-width: 980px) {
     .search2 {
         padding: 5%;
     }
@@ -1029,12 +1029,15 @@ audio {
         border: none;
         cursor: pointer;
     }
+    #about {
+        display: none;
+    }
 }
 
 
 /* Mobile version */
 
-@media only screen and (max-width: 830px) {
+@media only screen and (max-width: 760px) {
     .search_box_mobile_container {
         display: block;
     }

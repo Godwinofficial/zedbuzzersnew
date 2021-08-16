@@ -134,7 +134,7 @@
                             {% for item in category_links %}
                             <li><a href="{% url 'category' item|slugify %} ">{{ item }}</a></li>
                             {% endfor %}
-                            <li><a href="{% url 'about' %}">About us</a></li>
+                            <li><a id="about" href="{% url 'about' %}">About us</a></li>
 
                         </ul>
                     </nav>
