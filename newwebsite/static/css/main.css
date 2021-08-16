@@ -960,6 +960,10 @@ audio {
 }
 
 @media only screen and (max-width: 980px) {
+    .views {
+        position: relative;
+        left: 180px;
+    }
     .search2 {
         padding: 5%;
     }
