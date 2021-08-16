@@ -960,8 +960,24 @@ audio {
 }
 
 @media only screen and (max-width: 920px) {
+    .search2 {
+        padding: 5%;
+    }
+    .search2 input {
+        width: 70%;
+        padding: 6px;
+        outline: none;
+    }
+    .search2 button {
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        background: rgb(34, 83, 122);
+        padding: 5.5px 9px;
+        border-radius: 2px;
+    }
     .links nav ul li a {
-        /* color: red; */
         text-transform: uppercase;
         font-weight: 400;
         font-size: 18px;
@@ -993,6 +1009,25 @@ audio {
         border-left: 0.5px solid #333;
         margin-left: 25%;
         outline: none;
+    }
+    .search_box {
+        width: 45%;
+        border: none;
+        padding: 8px;
+        padding: 7.6% 0;
+        padding-left: 15px;
+        background: none;
+        color: #fff;
+        font-size: 15px;
+        border-left: 0.5px solid #333;
+        margin-left: 25%;
+        outline: none;
+    }
+    #search_btn {
+        color: #555;
+        padding: 6px 15px;
+        border: none;
+        cursor: pointer;
     }
 }
 
