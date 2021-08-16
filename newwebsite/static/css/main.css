@@ -1037,7 +1037,7 @@ audio {
 
 /* Mobile version */
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 765px) {
     .search_box_mobile_container {
         display: block;
     }
