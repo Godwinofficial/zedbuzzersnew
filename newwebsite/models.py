@@ -25,7 +25,7 @@ class Post(models.Model):
   category    = models.ForeignKey(Category, on_delete=CASCADE)
   time_stamp  = models.DateTimeField(auto_created=True)
   posted_by   = models.CharField(max_length=30, default='Godwin')
-  description = models.CharField(max_length=90000, blank=True)
+  description = models.TextField(max_length=90000, blank=True)
   post_views  = models.IntegerField(default=0)
   slug        = models.SlugField(null=True, unique=True)
 
