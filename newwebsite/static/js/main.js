@@ -14,7 +14,6 @@ bars.addEventListener('click', () => {
 
 })
 
-
 times.addEventListener('click', () => {
     slide.style.marginLeft = '-300%';
     bars.style.display = 'block';
