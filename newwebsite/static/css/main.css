@@ -1051,7 +1051,7 @@ audio {
     .mobile_nav_top {
         background: #fff;
         width: 100%;
-        padding: 1% 0%;
+        padding: 2% 0%;
         z-index: 999;
         position: fixed;
         margin-top: 0%;
@@ -1075,7 +1075,7 @@ audio {
     }
     .nav_btns {
         display: block;
-        margin-top: 8%;
+        margin-top: 5%;
         font-size: 30px;
         margin-left: 203%;
     }
@@ -1635,7 +1635,7 @@ audio {
         font-size: 18px;
     }
     .logo_mobile img {
-        width: 150%;
+        width: 130%;
         /* background: red; */
     }
     .logo_mobile {
