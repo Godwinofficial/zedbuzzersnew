@@ -6,7 +6,7 @@
             <div class="block1 ">
                 <h2>Latest {{ categories }}</h2>
                 <div class="block1_container ">
-                    {% for post in category_posts|slice:'20' %}
+                    {% for post in category_posts|slice:'35' %}
                     <div class="card_wrapper">
                         <div class="block1_content ">
                             <a href="{{ post.get_absolute_url }}"><img src="{{post.image.url}} " alt=" "></a>

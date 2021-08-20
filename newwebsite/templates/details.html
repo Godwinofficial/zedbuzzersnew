@@ -64,7 +64,7 @@
                     <div class="related_posts_wrapper">
                         <h3>Related posts</h3>
                         <div class="Related_posts">
-                            {% for post in related_posts|slice:'4' %}
+                            {% for post in related_posts|slice:'8' %}
                             <div class="card_wrapper_3">
                                 <div class="first_block1">
                                     <a href="{{ post.get_absolute_url }}"><img src="{{ post.image.url }}" alt=""></a>

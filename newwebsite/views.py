@@ -49,7 +49,7 @@ def post_detail_view(request, slug):
     related_posts_videos = Post.objects.filter(category=videos).order_by('-time_stamp')
     news_posts = Category.objects.get(slug='news')
     news = Post.objects.filter(category=news_posts)
-    related_posts = Post.objects.all().order_by('time_stamp')
+    related_posts = Post.objects.all().order_by('-time_stamp')
     category_links = Category.objects.all()
     post_details = get_object_or_404(Post, slug=slug)
     details_trending_posts = Post.objects.all().order_by('-post_views')
